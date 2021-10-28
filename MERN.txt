@@ -1,0 +1,887 @@
+MEAN Stack:
+M - MOngo DB
+E - Express Js
+A - Angular(Front end framework)
+N -node js
+
+MERN Stack:
+M-Mongo DB
+E-Express js
+R-React js(Front end view)
+n-node js
+
+
+R-React js(Front end view) + real time project(MERN)
+React - javascript library
+-developing the UI components
+
+-developed react app in facebook, insta, ..............
+-DOM
+
+React(basic of html and css)
+
+software:
+node.js
+https://nodejs.org/en/download/
+
+mongo db:
+https://www.mongodb.com/try/download/community
+
+visual studio code
+
+https://code.visualstudio.com/download
+
+react app:
+node >=8 ver
+npm >=5  ver
+
+install react app using npm package manager
+
+>>>>npm install -g create-react-app
+
+create a new project:
+>>>>npx create-react-app myproject
+
+project structure:
+node_module:contain react library(predefined)
+
+public: index.html(get the script from src in----->id="root")
+
+src: app.css(style)
+      app.js(script)
+      test
+
+index.css
+index.js(include all the app file) id="root"
+
+package: give infoermation about project
+
+>>cd myproject
+
+>npm start
+http://localhost:3000/
+
+Feature:
+-jsx (javascript xml)
+components
+one way binding
+DOM
+performance
+easy to learn
+
+
+Angular   vs React
+
+
+React component:
+2 types of components:
+-function components
+
+
+function Student(){
+  return <h1>Hello students, welcome you all</h1>
+}
+ReactDOM.render(
+ 
+    <Student/>,
+
+  document.getElementById('root')
+);
+
+
+-class components:
+class College extends React.Component{
+  render(){
+    return <h2>Hello Everyone</h2>
+  }
+}
+ReactDOM.render(
+    <College/>,
+  document.getElementById('root')
+);
+
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+
+class App extends React.Component{
+  render(){
+    return(
+      <div>
+        <College/>
+        <Student/>
+      </div>
+    )
+  }
+}
+class College extends React.Component{
+  render(){
+    return <h2>Hello Everyone</h2>
+  }
+}
+
+class Student extends React.Component{
+  render(){
+    return (
+      <div>
+        <h1>Arun</h1>
+        <p>Arun is studying B.E Final year</p>
+      </div>
+    );
+  }
+}
+
+export default App;
+
+
+React state:
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+
+class App extends React.Component{
+  render(){
+    return(
+      <div>
+        <College/>
+      </div>
+    );
+  }
+}
+class College extends React.Component{
+  constructor(props){
+    super(props);
+    this.state={
+      name:"VIT Univ",
+      Addr:"Chennai",
+      year:1950,
+      Rank:1
+
+    };
+  }
+  render(){
+    return(
+      <div>
+        <h1>My college name is: {this.state.name}</h1>
+        <p>my college addr is: {this.state.Addr} 
+        </p>
+        <p>College started in the year: {this.state.year}</p>
+        <p>Rank of the college: {this.state.Rank}</p>
+      </div>
+    );
+  }
+}
+
+
+export default App;
+
+
+React property:
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+
+class App extends React.Component{
+  render(){
+    return(
+      <div>
+        <College/>
+        <Faculty/>
+      </div>
+    );
+  }}
+
+class College extends React.Component{
+  render(){
+    return<h1>College open by Monday Date : {this.props.date}</h1>
+  
+    }}
+
+class Faculty extends React.Component{
+  render(){
+    return(
+      <div>
+        <h1>All are welcome to college</h1>
+        <College date="27th Sep 2021"/>
+
+      </div>
+    )
+  }
+}
+
+export default App;
+
+
+diff b/w state vs props:
+
+jsx:  DOM
+
+html - attribute 
+
+<input type="text" id="" placeholder>
+
+-literal
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+
+class App extends React.Component{
+  render(){
+    return(
+      <div>
+        <h1 className="hello">Hello Everyone, welcome you all</h1>
+        <h2 datatype="demo">React Training</h2>
+      </div>
+    );
+  }}
+
+
+export default App;
+
+
+-expression
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+
+class App extends React.Component{
+  render(){
+    return(
+      <div>
+        <h1 className="hello">{5+5}</h1>
+        <h2 datatype="demo">React Training</h2>
+      </div>
+    );
+  }}
+
+
+export default App;
+
+jsx style:
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+
+class App extends React.Component{
+  render(){
+    var demo={
+      fontSize:70,
+      color:'#e02476',
+      fontFamily:'Courier'
+    }
+    return(
+      <div>
+       
+        <h2 style={demo}>React Training</h2>
+      </div>
+    );
+  }}
+
+
+export default App;
+
+
+React js component Life-cycle:
+
+-Initial phase:
+getDefaultProp()
+getInitialstate()
+
+-Mounting phase:
+create component, insert data - DOM    "hello everyone"
+render()
+componentmount()
+
+-Update phase:                           "hi to all"
+render()
+componentwillupdate()
+
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+
+class App extends React.Component{
+  constructor(props){
+super(props)
+    this.state={hello:"Welcome you all"};
+    this.changeState=this.changeState.bind(this)
+  }
+  render(){
+    return(
+      <div>       
+        <h2>React Training</h2>
+        <h3>Hello {this.state.hello}</h3>
+        <button onClick={this.changeState}>Update</button>
+      </div>
+    );
+  }
+  componentDidMount(){
+    console.log('component will mount')
+  }
+  changeState(){
+    this.setState({hello:"This is react training"});
+  }
+  shouldComponentUpdate(newProps,newState){
+    return true;
+  }
+}
+
+
+export default App;
+
+
+-Unmounting phase
+destroyed from component 
+
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+
+class App extends React.Component{
+  constructor(props){
+super(props)
+    this.state={hello:true};
+    
+  }
+  delData = () =>{
+    this.setState({hello:false})
+  }
+  render(){
+    let mydata;
+    if(this.state.hello){
+      mydata=<Child/>;
+    };
+    return(
+      <div>       
+        <h2>React Training</h2>
+        <h3>{mydata}</h3>
+        <button onClick={this.delData}>Delete</button>
+      </div>
+    );
+  }}
+  class Child extends React.Component{
+    componentWillUnmount(){
+     alert("unmounted");
+    }
+    render(){
+      return(
+        <h1>Welcome you all</h1>
+      )
+    }
+  }
+ 
+
+  
+
+
+
+export default App;
+
+React form:
+prop,state
+
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+
+class App extends React.Component{
+  constructor(props){
+super(props)
+    this.state={username:''};
+    
+  }
+  addData = (event) =>{
+    this.setState({username:event.target.value});
+  }
+  render(){
+       return(
+     <form>
+       <h1>Hi, {this.state.username}</h1>
+       <label>Name:</label>
+       <input type="text" onChange={this.addData}></input>
+     </form>
+    );
+  }}
+
+export default App;
+
+
+React form : conditional rendering
+
+let
+var
+const
+
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+
+class App extends React.Component{
+  constructor(props){
+super(props)
+    this.state={username:''};
+    
+  }
+  addData = (event) =>{
+    this.setState({username:event.target.value});
+  }
+  render(){
+    let heading='';
+    if(this.state.username){
+      heading=<h1>Hi,{this.state.username}</h1>
+    }else{
+      heading='';
+    }
+       return(
+     <form>
+       {heading}
+       <label>Name:</label>
+       <input type="text" onChange={this.addData}></input>
+     </form>
+    );
+  }}
+
+export default App;
+
+submit button in react form:
+
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+
+class App extends React.Component{
+  constructor(props){
+super(props)
+    this.state={username:''};
+    
+  }
+  addData = (event) =>{
+    this.setState({username:event.target.value});
+  }
+  submitdata=(event) =>{
+    event.preventDefault();
+    alert("Name is :"+this.state.username);
+  }
+  render(){
+    
+       return(
+     <form onSubmit={this.submitdata}>
+       <h1>Hi,{this.state.username}</h1>
+       <label>Name:</label>
+       <input type="text" onChange={this.addData}></input>
+       <button type="submit">submit</button>
+     </form>
+    );
+  }}
+
+export default App;
+
+
+multiple data:
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+
+class App extends React.Component{
+  constructor(props){
+super(props)
+    this.state={
+      username:'',
+      addr:'',
+      age:'',
+    };
+    
+  }
+  addData = (event) =>{
+    this.setState({username:event.target.value});
+  }
+  addaddr=(event) =>{
+    this.setState({addr:event.target.value});
+
+  }
+  addage=(event)=>{
+    this.setState({age:event.target.value});
+  }
+  render(){
+    
+       return(
+     <form >
+       <h1>Hi,{this.state.username} {this.state.addr} {this.state.age}
+       </h1>
+       <label>Name:</label>
+       <input type="text" name="username" onChange={this.addData}/>
+       <br></br>
+    <label>Address:</label>
+       <input type="text" name="addr" onChange={this.addaddr}/>
+      <br></br>
+      <label>Age:</label>
+       <input type="text" name="age" onChange={this.addage}/>
+     </form>
+    );
+  }}
+
+export default App;
+
+React component API:
+-setstate() :
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+
+class App extends React.Component{
+  constructor(props){
+super(props)
+    this.state={hello:"Welcome you all"};
+    this.changeState=this.changeState.bind(this)
+  }
+  render(){
+    return(
+      <div>       
+        <h2>React Training</h2>
+        <h3>Hello ,{this.state.hello}</h3>
+        <button onClick={this.changeState}>Update</button>
+      </div>
+    );
+  }
+ 
+  changeState(){
+    this.setState({hello:"This is react training"});
+  }
+}
+
+
+export default App;
+
+-forceupdate():
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+
+class App extends React.Component{
+  constructor(){
+super()
+    this.forceUpdateState=this.forceUpdateState.bind(this);
+  }
+  forceUpdateState(){
+    this.forceUpdate();
+  };
+  render(){
+    return(
+      <div>       
+        <h2>React Training</h2>
+        <h3>ForceUpdate value: {Math.random()}</h3>
+        <button onClick={this.forceUpdateState}>ForceUpdate</button>
+      </div>
+    );
+  }
+ 
+  changeState(){
+    this.setState({hello:"This is react training"});
+  }
+}
+
+export default App;
+
+-findDOMNode()
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class App extends React.Component{
+  constructor(){
+super();
+    this.findDOMNodeHandler=this.findDOMNodeHandler.bind(this);
+    this.findDOMNodeHandler1=this.findDOMNodeHandler1.bind(this);
+  };
+  findDOMNodeHandler(){
+    var myid=document.getElementById('myidone');
+    ReactDOM.findDOMNode(myid).style.color='blue';
+  }
+  findDOMNodeHandler1(){
+    var myid=document.getElementById('myidtwo');
+    ReactDOM.findDOMNode(myid).style.color='red';
+  }
+
+
+  render(){
+    return(
+      <div>       
+        <h2>React Training</h2>
+        <button onClick={this.findDOMNodeHandler}>Node1</button>
+        <button onClick={this.findDOMNodeHandler1}>Node2</button>
+      <h1 id="myidone">Hello Everyone</h1>
+      <h1 id="myidtwo">React Training</h1>
+      </div>
+    );
+  }
+ 
+}
+
+export default App;
+
+Event Handler:
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class App extends React.Component{
+  constructor(props){
+super(props);
+this.state={
+fruit:''
+};
+  }
+  addData(event){
+    this.setState({
+      fruit:event.target.value
+    });
+  }
+ 
+
+
+  render(){
+    return(
+      <div>       
+        <h2>React Training</h2>
+        <input type="text" id="fruit"
+        onChange={this.addData.bind(this)}></input>
+        <h1>Favourite fruit: {this.state.fruit}</h1>
+      </div>
+    );
+  }
+ 
+}
+
+export default App;
+
+React List:
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const mydata=['Arun','Ajay','Bala','Hari'];
+const listdata=mydata.map((mydata)=>
+{
+  return<li>{mydata}</li>;
+});
+
+ReactDOM.render(
+  <React.StrictMode>
+     <ul>{listdata}</ul>,
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+react style:
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class App extends React.Component{
+ render(){
+   const demo={
+     color:"green",
+     backgroundColor:"red",
+     fontSize:"40px",
+   }
+    return(
+      <div>       
+        <h2 style={demo}>React Training</h2>
+      </div>
+    );
+  }
+ 
+}
+
+export default App;
+
+import logo from './logo.svg';
+
+import React from 'react';
+import styles from './App.css';
+
+
+class App extends React.Component{
+ render(){
+    return(
+      <div>       
+        <h2 className={styles.demo1}>React Training</h2>
+      </div>
+    );
+  }
+ 
+}
+
+export default App;
+
+Http:
+import logo from './logo.svg';
+import React from 'react';
+import styles from './App.css';
+
+
+class App extends React.Component{
+  constructor(props){
+    super(props);
+    this.state={
+      error:null,
+      isLoaded:false,
+      items:[]
+    };
+  }
+  componentDidMount(){
+    fetch("https://www.amazon.com/items")
+    .then(res => res.json())
+    .then(
+      (result)=>{
+        this.setState({
+          isLoaded:true,
+          items:result.items
+        });
+      },
+      (error)=>{
+        this.setState({
+          isLoaded:true,
+          error
+        });
+      }
+    )
+  }
+ render(){
+   const{error,isLoaded,items}=this.state;
+   if(error){
+     return<div>Error:{error.message}</div>;
+   }else if(!isLoaded){
+     return<div>Loading....</div>;
+   }else{
+     return(
+      <ul>
+        {items.map(item=>(
+          <li>{item}</li>
+        ))}
+      </ul>
+    );
+   }    
+  } 
+}
+
+export default App;
+
+var a=require('http');
+a.createServer(function(req,res){
+res.end('Hello everyone');
+}).listen(8081);
+
+
+React Hooks:
+-function 
+
+import logo from './logo.svg';
+
+
+import styles from './App.css';
+import React,{useState} from 'react';
+function App(){
+  const[count,setCount]=useState(0);
+  return(
+    <div>
+      <h1>you have clicked {count} time.</h1>
+      <button onClick={
+        ()=>setCount(count+1)
+      }>Submit</button>
+    </div>
+  );
+}
+
+export default App;
+
+
+MERN - Real time project
+
+Steps:
+1.open the vs code
+2.vs code>>>open the new terminal
+3.C:\Users\Livewire\Desktop\mern> mkdir client
+-get input from user
+4.C:\Users\Livewire\Desktop\mern>mkdir server
+-backend code to store data
+5.>>cd client
+6.>>npx create-react-app .
+7.cd server
+C:\Users\Livewire\Desktop\mern\server> 
+8.>>npm init
+enter.......
+
+package.json
+,................................
+
+9.npm install express mongoose
+10.framework(project)- Database
+11.>>server---new file 
+index.js
+const express=require('express');
+const mongoose=require('mongoose');
+const app=express()
+
+app.use(express.json())
+mongoose.connect("",{
+    useNewUrlParser:true,
+});
+
+app.listen(8001, () => {
+    console.log("server running on 8001");
+});
+
+12.
+https://www.mongodb.com/cloud/atlas
+
+13.
+create new account
+>>loggedin-----free cloud
+>>region-----cluster CRUD
+finish
+
+14.In MongoDB
+>>go to Database Access page
+create user/pass----project
+
+15.In Mongo DB
+>>go to Network access
+add IP in it
+
+16>in mongo DB
+connect and copy code of Mongo Compass >>paste it in DB compass and connect
+
+>>npm install -g yarn
+
+>>yarn add axios
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
