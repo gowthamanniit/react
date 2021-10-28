@@ -1,5 +1,14 @@
+
+React is a JavaScript library for building user interfaces.
+
+React is used to build single-page applications.
+
+React allows us to create reusable UI components.
+
 React is a declarative, efficient, and flexible JavaScript library for building user interfaces. 
+
 It's 'V' in MVC. ReactJS is an open-source, component-based front end library responsible only for the view layer of the application. 
+
 The declarative view makes your code more predictable and easier to debug.
 
 Note: React is not a framework. It is just a library developed by Facebook to solve some problems that we were facing earlier.
