@@ -1,0 +1,19 @@
+project structure:
+===================
+node_module:contain react library(predefined)
+
+public: 
+=======
+
+index.html(get the script from src in----->id="root")
+
+src:  
+=====
+      app.css(style)
+      app.js(script)
+      test
+      index.css
+      index.js(include all the app file) id="root"
+
+package: give infoermation about project
+========
