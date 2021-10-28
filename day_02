@@ -1,0 +1,78 @@
+Document Object Model (DOM)
+===========================
+The document object represents the whole html document.
+
+When html document is loaded in the browser, it becomes a document object. 
+It is the root element that represents the html document. 
+It has properties and methods. 
+By the help of document object, we can add dynamic content to our web page.
+Properties of document object
+=============================
+document -> form -->  text,password,choice,radio,TextAra,Button......
+methods of docuement object:
+============================
+write("string")	          writes the given string on the doucment.
+writeln("string")	        writes the given string on the doucment with newline character at the end.
+getElementById()	        returns the element having the given id value.
+getElementsByName()	      returns all the elements having the given name value.
+getElementsByTagName()	  returns all the elements having the given tag name.
+getElementsByClassName()	returns all the elements having the given class name.
+
+Accessing field value by document object
+=========================================
+document.formanme.attributes.value
+ex:
+document.form1.name.value
+
+document.getElementById() method
+=================================
+<script type="text/javascript">  
+function getcube(){  
+var number=document.getElementById("number").value;  
+alert(number*number*number);  
+}  
+</script>  
+<form>  
+Enter No:<input type="text" id="number" name="number"/><br/>  
+<input type="button" value="cube" onclick="getcube()"/>  
+</form>  
+document.getElementsByName() method
+===================================
+The document.getElementsByName() method returns all the element of specified name.
+
+<script type="text/javascript">  
+function totalelements()  
+{  
+var allgenders=document.getElementsByName("gender");  
+alert("Total Genders:"+allgenders.length);  
+}  
+</script>  
+<form>  
+Male:<input type="radio" name="gender" value="male">  
+Female:<input type="radio" name="gender" value="female">  
+  
+<input type="button" onclick="totalelements()" value="Total Genders">  
+</form>  
+document.getElementsByTagName() method
+========================================
+The document.getElementsByTagName() method returns all the element of specified tag name.
+<script type="text/javascript">  
+function countpara(){  
+var totalpara=document.getElementsByTagName("p");  
+alert("total p tags are: "+totalpara.length);  
+  
+}  
+</script>  
+<p>This is a pragraph</p>  
+<p>Here we are going to count total number of paragraphs by getElementByTagName() method.</p>  
+<p>Let's see the simple example</p>  
+<button onclick="countpara()">count paragraph</button>
+
+innerHTML
+============
+
+The innerHTML property can be used to write the dynamic html on the html document.
+It is used mostly in the web pages to generate the dynamic html such as registration form, comment form, links etc.
+
+
+
