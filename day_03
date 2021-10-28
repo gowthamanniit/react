@@ -1,0 +1,47 @@
+
+To learn and test React, you should set up a React Environment on your computer.
+================================================================================
+
+Node.js is required to use create-react-app.
+
+
+software:
+node.js
+https://nodejs.org/en/download/
+
+mongo db:
+https://www.mongodb.com/try/download/community
+
+visual studio code
+
+https://code.visualstudio.com/download
+
+react app:
+node >=8 ver
+npm >=5  ver
+
+install react app using npm package manager
+
+>>>>npm install -g create-react-app
+>>>>npm uninstall -g create-react-app
+
+note: -g --->global (entire system)
+            (first time only need to install)   
+
+create a new project:
+>>>>npx create-react-app myproject
+
+run the project:
+================
+>>>cd foldernamae
+>>> npm start
+
+A new browser window will pop up with your newly created React App! If not, open your browser and type localhost:3000 in the address bar.
+
+
+note:
+npm: node package manager
+npx: node package executor
+
+
+
