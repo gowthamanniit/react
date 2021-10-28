@@ -29,3 +29,11 @@ React creates a VIRTUAL DOM in memory.
 Instead of manipulating the browser's DOM directly, 
 
 where it does all the necessary manipulating, before making the changes in the browser DOM.
+
+Feature:
+-jsx (javascript xml)
+components
+one way binding
+DOM
+performance
+easy to learn
