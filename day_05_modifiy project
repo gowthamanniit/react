@@ -35,5 +35,29 @@ function App() {
     </div>
   );
 }
-
 export default App;
+=================================src/index.js (root) =================================
+ReactDOM.render( <React.StrictMode>   <App />  </React.StrictMode>,  document.getElementById('root'));
+
+note: <App/> -------> function name App ---> in src/App.js file
+
+
+============================================================
+src  / index.js: (root)  (dom)
+============================================================
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+const myfirstelement = <h1>Hello React!</h1>
+ReactDOM.render(myfirstelement, document.getElementById('root'));
+
+note: here myfirstelement is a constant name.(value=Hello React)
+
+====================================================================================
+
+index.html
+===========
+
+<div id="root"></div>
+
+
