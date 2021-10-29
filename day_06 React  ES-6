@@ -336,7 +336,86 @@ function myVehicle({ model, registration: { state } }) {
 </body>
 </html>
 
+6) React ES6 Spread Operator(...)
+====================================================================================
 
+Spread Operator
+The JavaScript spread operator (...) allows us to quickly copy all or part of an existing array or object into another array or object.
 
+<!DOCTYPE html>
+<html>
 
+<body>
+
+<script>
+const numbersOne = [1, 2, 3];
+const numbersTwo = [4, 5, 6];
+const numbersCombined = [...numbersOne, ...numbersTwo];
+
+document.write(numbersCombined);
+</script>
+
+</body>
+</html>
+
+o/p: 1,2,3,4,5,6
+=====================spread operator with destructing=====
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<script>
+const numbers = [1, 2, 3, 4, 5, 6];
+
+const [one, two, ...rest] = numbers;
+
+document.write("<p>" + one + "</p>");
+document.write("<p>" + two + "</p>");
+document.write("<p>" + rest + "</p>");
+</script>
+
+</body>
+</html>
+
+o/p
+1
+2
+3,4,5,6
+
+note: one ,two ---> variables
+      rest-----> array 
+ 
+ ========================================   spread operator using object  ===========================
+ <!DOCTYPE html>
+<html>
+
+<body>
+
+<script>
+const myVehicle = {
+  brand: 'Ford',
+  model: 'Mustang',
+  color: 'red'
+}
+
+const updateMyVehicle = {
+  type: 'car',
+  year: 2021, 
+  color: 'yellow'
+}
+
+const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
+
+//Check the result object in the console:
+console.log(myUpdatedVehicle);
+alert(myUpdatedVehicle);
+</script>
+
+<p>Press F12 for console view</p>
+
+</body>
+</html>
+
+note: color two times repeated in two objects.but only one color accepted.(yellow)
 
