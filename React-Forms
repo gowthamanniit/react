@@ -1,0 +1,21 @@
+Forms: TO give input(dynamic)
+===============================
+Just like in HTML, React uses forms to allow users to interact with the web page.
+Adding Forms in React
+You add a form with React like any other element:
+-----------------ex---------------------------------
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+function MyForm() {
+  return (
+    <form>
+      <label>Enter your name:
+        <input type="text" />
+      </label>
+    </form>
+  )
+}
+
+ReactDOM.render(<MyForm />, document.getElementById('root'));
+------------------------------------------------------------
