@@ -447,6 +447,7 @@ person.js
 
 export const name = "Jesse"
 export const age = "40"
+note: only one export we can give in-line individually
 All at once at the bottom:
 ==========================
 person.js
