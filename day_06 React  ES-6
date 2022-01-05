@@ -102,6 +102,7 @@ hello = function() {
 document.getElementById("demo").innerHTML = hello();
 </script>
 
+note: Here function is a keyword
 ----------------------------
 arrow function (advanced)
 ==============================
