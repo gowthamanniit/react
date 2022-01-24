@@ -1,0 +1,59 @@
+.contact {
+  padding-top: 50px;
+}
+
+.contactImg {
+  margin-left: 150px;
+  width: 70vw;
+  height: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.contactForm {
+  position: relative;
+}
+
+.contactFormGroup {
+  margin-left: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.contactInput {
+  font-size: 25px;
+  border: 2px solid black;
+  padding: 20px;
+  width: 70vw;
+  height: 100%;
+}
+
+.contactInput_writeText {
+  font-size: 25px;
+  border: 2px solid black;
+  padding: 20px;
+  width: 70vw;
+  height: 100%;
+}
+
+.contactInput:focus {
+  outline: none;
+}
+
+.contactText {
+  font-size: 20px;
+  height: 100vh;
+}
+
+.contactSubmit {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  color: white;
+  background-color: teal;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
