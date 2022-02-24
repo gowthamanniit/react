@@ -1,0 +1,66 @@
+pre request software installation:
+=======================
+1. node.js
+https://nodejs.org/en/download
+2. mongodb:
+https://www.mongodb.com/try/download/community
+3. visual studio code
+https://code.visualstudio.com/download
+
+=====================
+open visual studio code --> terminal --> new terminal 
+
+	>>> npm install -g create-react-app
+	(only one time installation)
+	npm ---> node package manager
+	-g     ---> global
+
+	>>> npx create-react-app projectname
+	      (this command we will give every new project)
+	
+	npx --> node package executor
+	projectname --> userdefine
+	file --> open folder --> select your project folder -->
+			(ex: c:/users/livewire/myproject)
+		--> select folder
+	 open terminal
+	>>> npm start
+	or
+	http://localhost:3000/
+	or
+	http://localhost:3000/index.html
+	============================
+	node modules: --> pre defined react library
+	public               --> index.html --> result (<div id="root"></div>
+			(show on browser)
+
+	src                    --> App.js        --> content write(code)
+		           index.js      --> render (root)
+				document.getElementById("root")
+	===========================
+	React Features:
+	1) JSX --> javascript and xml
+	2) components --> two components -->
+			- function components
+			- class components
+	3) one way binding -->  {expression} 
+	4) DOM	             --> Document Object Model
+			-document.write()
+			-document.writeln()
+			-document.getElementByID()
+			-document.getElementByID().innerHTML
+			-document.getElementByTagName
+	5) performance        --> excellent comparing angular
+	6) easy to learn       --> html,css,javascript(pre request)
+
+		
+		
+	
+
+
+	
+
+	
+
+	
+	
