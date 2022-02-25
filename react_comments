@@ -1,0 +1,26 @@
+
+open new terminal
+==============
+c:/.../,...>e:
+e:/> md greact
+e:/>cd greact
+
+e:/greact> npm install -g create-react-app
+e:/greact> npm install -g npm@8.5.2 -------------------> update latest - pls check
+	npm: node package manager
+	g: global
+version check:
+===========
+e:/greact> npm --version
+
+
+project creation:
+===========
+e:/greact>	npx create-react-app myproject --------> myproject (projectname user define)
+
+wait upto 5 mins.
+
+file --> open folder --> choose your folder (not project name)
+-->open terminal
+-->cd projectname
+--> npm start
