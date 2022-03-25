@@ -9,7 +9,7 @@ Mounting means putting elements into the DOM.
 React has four built-in methods that gets called, in this order, when mounting a component:
 
 -constructor()
--getDerivedStateFromProps()
+-getDerivedStateFromProps() (removed in new version , only work on old version)
 -render()
 -componentDidMount()
 
