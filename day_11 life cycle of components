@@ -374,40 +374,61 @@ Example:
 Click the button to delete the header:
 
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-class Container extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {show: true};
-  }
-  delHeader = () => {
-    this.setState({show: false});
-  }
-  render() {
-    let myheader;
-    if (this.state.show) {
-      myheader = <Child />;
-    };
-    return (
-      <div>
-      {myheader}
-      <button type="button" onClick={this.delHeader}>Delete Header</button>
-      </div>
-    );
-  }
+import React from "react";
+class Child extends React.Component
+{
+    componentWillUnmount()
+    {
+        alert("component removed");
+    }
+    render()
+    {
+        return(
+            <>
+            <h1>Hello World!!!</h1>
+            </>
+        );
+    }
 }
 
-class Child extends React.Component {
-  componentWillUnmount() {
-    alert("The component named Header is about to be unmounted.");
-  }
-  render() {
-    return (
-      <h1>Hello World!</h1>
-    );
-  }
-}
+class UnMountDemo extends Child
+{
+    constructor()
+    {
+        super()
+        this.state={
+                    show:true
+                   }
+    }
 
-ReactDOM.render(<Container />, document.getElementById('root'));
+    delComponent=()=>
+    {
+        this.setState({show:false})
+    }
+    render()
+    {
+        let mycomponent
+        if(this.state.show==true)
+        {
+            mycomponent=<Child/>
+        }
+        return(
+            <>
+            {mycomponent}
+            <button onClick={this.delComponent}>Delete Component</button>
+            </>
+        );
+    }
+}
+export default UnMountDemo;
+
+index.js:
+===========
+
+ReactDOM.render(
+  <React.StrictMode>    
+    {    <UnMountDemo/>   }
+  </React.StrictMode>,
+  document.getElementById("answer")
+);
+
