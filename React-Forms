@@ -136,8 +136,44 @@ To access the fields in the event handler use the event.target.name and event.ta
 
 To update the state, use square brackets [bracket notation] around the property name.
   
-// multiple input values
+// multiple input values (method 1 - me)
+--------------------------------------------
+import {useState} from "react"
+function FormDemo1()
+{
+    const [inputs,setInputs]=useState({rno:1001,sname:'gowtham',age:40})
+    //const [inputs,setInputs]=useState({})
+    const handleChange=(event)=>
+    {
+        const key1=event.target.name;
+        const value1=event.target.value;
+        //alert(key1+ "   "+value1);
+        setInputs(values=>({...values,[key1]:value1}))
 
+    }
+    const handleSubmit=(event)=>
+    {
+        event.preventDefault();
+        alert(inputs.rno+"  "+inputs.sname+"  "+inputs.age);
+    }
+    return(
+        <form onSubmit={handleSubmit}>
+        <h1>Mulitple Input Fields</h1>
+        
+        <input type="text" name="rno" value={inputs.rno || ""} onChange={handleChange}></input>
+        <br></br>
+        <input type="text" name="sname" value={inputs.sname} onChange={handleChange}></input>
+        <br></br>
+        <input type="number" name="age" value={inputs.age} onChange={handleChange}></input>
+
+        <input type="submit"></input>
+        </form>       
+    )
+}
+export default FormDemo1
+-----------------------------------------
+method 2 : online
+--------------------------------------
  import { useState } from "react";
 
 function LoginFunction() {
