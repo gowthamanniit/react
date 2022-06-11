@@ -1,0 +1,27 @@
+props using function components:
+========================
+props:  properties
+	
+	def: passing parameter or arguments from index.js
+
+	ex:
+	calling function:
+	import funname from './filename.js'
+	<MyApp book="javap rogramming" />
+
+called function:
+	function funname(props)
+	{
+		return <h1> {props.book}</h1>
+	}
+	export default funname
+
+function --> keyword
+funame --> user define
+props    --> inbuilt
+book     --> calling function attributes 
+
+	
+//==============multi arg passing===============================
+<MyBook book1="JAVA Programming" book2="Python Programming" />    
+//=========================================================

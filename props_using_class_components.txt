@@ -1,0 +1,37 @@
+props using class components:
+=====================
+props:  properties
+	
+	def: passing parameter or arguments from index.js
+
+	ex:
+	calling function:
+	import funname from './filename.js'
+	<MyApp book="javap rogramming" />
+
+called function:
+	import React from './react'
+	class classnamename extends React.Component
+	{
+	constructor(props)
+	{
+		super();
+		this.state={mybook:props.book};
+	}
+	render()
+	{
+		return <h1> {this.state.mybook}</h1>
+	}
+	}
+	export default funname
+
+class --> keyword
+classnamename --> user define
+props    --> inbuilt
+this.state -->json object
+mybook     --> user define key value
+props.book --> java programming
+	
+//==============multi arg passing===============================
+<MyBook book1="JAVA Programming" book2="Python Programming" />    
+//=========================================================
