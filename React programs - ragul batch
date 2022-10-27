@@ -1,0 +1,445 @@
+//import logo from './6.jpg';
+//import './App.css';
+/*
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+export default App;
+*/
+//------------------------------2.modify default project---------------------------------------------
+/*function App()
+{
+  return <h1>welcome to header1</h1>
+}
+export default App;*/
+//----------------------------3. Adding multiple HTML tags -------------------------------
+/*function App()
+{
+return(
+<>
+<h1>this is header 1</h1>
+<h2>this is header 2</h2>
+<h3>this is header 1</h3>
+<h4>this is header 1</h4>
+<h5>this is header 1</h5>
+</>)
+}
+export default App;*/
+//----------------------------4.how to use var const let? --------------------------
+/*function App()
+{
+var k1=20;
+var k2=30;
+return(
+  <div>
+    <h1>Usage of variable in React</h1>
+    <h2>Number one: {k1}</h2>
+    <h2>Number two: {k2}</h2>
+    <h2>Total     : {k1+k2}</h2>
+  </div>
+)
+}
+export default App;*/
+//----------- 5. how to use nested/multiple components in single view -----------------
+/*function TopView()
+{
+  return(
+    <div>
+        <h1>This is top view </h1>        
+    </div>
+  )
+}
+function BottomView()
+{
+  return(
+    <>
+      <h2>This is Bottom View</h2>
+    </>
+  )
+}
+function App()
+{
+  return(
+    <>
+      <TopView/>
+      <BottomView/>
+    </>
+  )
+}
+export default App;*/
+// ---------------------6.how to use class componets -----------------------
+
+/*import React from "react";
+class App extends React.Component
+{
+  render(){
+    return <h2>classs component</h2>
+  }
+}
+export default App;*/
+
+//---------------------------7. how use multi tag in clsss----------
+/*import React from "react";
+class App extends React.Component
+{ 
+   
+  render(){
+    var k1=33;
+    var k2=44;
+    var k3;
+    k3=k1+k2  
+    return(
+        <>
+          
+          <h2>classs component Number 1:{k1}</h2>
+          <h2>classs component Number 2:{k2}</h2>
+          <h2>classs component total : {k3}</h2>
+          </>
+    )
+  }
+}
+export default App;*/
+//----------------------------8 combine class -----------------------
+/*
+import React from "react"
+class Test extends React.Component
+{  
+  render()  
+  {
+    var s1=100;
+    var s2=200;
+    return(
+      <>
+       <h1>This is base class {s1}</h1>
+       <h1>This is base class {s2}</h1>
+       <hr size="49" color="blue"></hr>
+       </>
+    )
+  }
+}
+
+class App extends Test
+{
+  render()
+  {
+    return( 
+      <>
+      <Test/>
+    <h2> This is derive classs</h2> 
+    
+    </>
+    )
+  }
+}
+export default App;
+*/
+// -----------------9. changing default App(Component) name into your own name-----------------
+/*
+import React from 'react'
+class Gowtham extends React.Component
+{
+  render()
+  {
+    return <h1>Welcome To React </h1>
+  }
+}
+export default Gowtham;
+*/
+// --------------- 10. using function type-1 (basic - model)-----------------
+/*import React from 'react'
+class Gowtham extends React.Component
+{
+  render()
+  {
+    function pradeep()
+    {
+      return "this is normal function";
+    }
+    return(
+      <>
+      <h1>Function Demo</h1>
+      <h2>{pradeep()}</h2>
+      </>
+    )
+  }
+}
+export default Gowtham;*/
+// ----------------------- 11. using function type 2 old model------------ 
+/*
+import React from "react";
+class Gowtham extends React.Component
+{
+  render()
+  {
+    let pradeep=function()
+    {
+      return "this is function old model";
+    }
+    return(
+      <>
+      <h1>This is function type 2</h1>
+        <h2>{pradeep()}</h2>      
+      </>
+    );
+    
+  }
+}
+export default Gowtham;*/
+//---------------------------------12. using function type 3 with arg----------
+/*import React from "react";
+class Gowtham extends React.Component
+{
+  render()
+  {
+    let pradeep=function(a,b)
+    {
+      return "this is function with arg or parameter --->"+(a+b);
+    }
+    return(
+      <>
+      <h1>This is function type 3 with arguments</h1>
+        <h2>Result: {pradeep(11,33)}</h2>      
+      </>
+    );
+    
+  }
+}
+export default Gowtham;
+*/
+//---------------------------------13. using Arrow function without arg----------
+/*import React from 'react'
+class Gowtham extends React.Component
+{
+  render()
+  {
+    const show=()=>
+    {
+      return "This is arrow function result";
+    }
+    return( 
+    <>
+    <h1>This is arrow function.</h1> 
+    <h2>Answer: {show()}</h2>
+    </>
+    )
+  }
+}
+export default Gowtham;*/
+// --------------------------14 .arrow function using with arguments----------------------
+
+/*import React from 'react'
+class Gowtham extends React.Component
+{
+  render()
+  {
+    const show=(a,b,c)=>
+    {
+      return "This is arrow function with arg:"+(a+b+c);
+    }
+    return( 
+    <>
+    <h1>This is arrow function.</h1> 
+    <h2>Answer: {show(11,22,33)}</h2>
+    </>
+    )
+  }
+}
+export default Gowtham;*/
+// --------------------------14 .arrow function without using parenthesis()----------------
+/*import React from 'react'
+class Gowtham extends React.Component
+{
+  render()
+  {
+    const show=a=>
+    {
+      return "This is arrow function with arg:"+(a*15);
+    }
+    return( 
+    <>
+    <h1>This is arrow function.</h1> 
+    <h2>Answer: {show(11)}</h2>
+    </>
+    )
+  }
+}
+export default Gowtham;*/
+//----------------15. using array basic model -------------------
+/*function Gowtham()
+{
+  const myarr=[11,22,33,44,55,66,77];
+  return(
+    <>
+    <h1>Array Concepts</h1>
+    <h3>Array index : 0 ---&gt; {myarr[0]}</h3>
+    <h3>Array index : 1 ---&gt; {myarr[1]}</h3>
+    <h3>Array index : 2 ---&gt; {myarr[2]}</h3>
+    <h3>Array index : 3 ---&gt; {myarr[3]}</h3>
+    <h3>Array index : 4 ---&gt; {myarr[4]}</h3>
+    <h3>Array index : 5 ---&gt; {myarr[5]}</h3>
+    <h3>Array index : 6 ---&gt; {myarr[6]}</h3>
+    <h3>Array index : 7 ---&gt; {myarr[7]}</h3>  
+    </>
+  )
+}
+export default Gowtham;*/
+
+//---------------------------------16. hw : sum of array
+/*function Gowtham()
+{
+  const myarr=[11,22,33,44,55,66,77,92];
+  var s=0
+  const sumfun=()=>
+  {
+    var len=myarr.length;
+    //return "Length of array:"+len;
+    for(var i=0;i<len;i++)
+    {
+      s=s+myarr[i];
+    }
+    return "Sum of array:"+s;
+  }
+  return(
+    <>
+    <h1>Sum of Array</h1>
+    <h3> Sum of Array ============&gt; {sumfun()}</h3>  
+    </>
+  )
+}
+export default Gowtham;
+*/
+//------------------------17.how to use map method in an array---------------
+/*function Gowtham()
+{
+  const myarr=[11,22,33,44,55,66,77,92];
+  return(
+    <>
+    <h1>Display Array Values:</h1>
+    <h1>{myarr.map(v=>v)}</h1>
+    <hr></hr>
+    <h1>{myarr.map(v=>v+" ")}</h1>
+    <hr></hr>
+    {myarr.map((item)=><h2>{(item)}</h2>)}
+    </>
+  )
+}
+export default Gowtham;*/
+// ---------------------------18.destructing array ----------------------------
+/*function Gowtham()
+{
+  const myarr=["one","two","three","four","five","six"]
+  const [v1,v2,,,,v3]=myarr
+  return(
+    <>
+    <h3>{v1}</h3>
+    <h3>{v2}</h3>
+    <h3>{v3}</h3>
+    </>
+  )
+}
+export default Gowtham*/
+//---------------------- 19. destructing array using function return----------------
+/*function Gowtham()
+{
+  const myfun=(a,b)=>
+  {
+    const plus=a+b
+    const subtraction=a-b
+    const multiplication=a*b
+    const div=a/b
+    return [plus,subtraction,multiplication,div]
+  }
+
+  const [add,sub,,div]=myfun(10,2)
+
+  return(
+    <>
+  <h1> Addition {add}</h1>
+  <h1> Subtraction {sub}</h1>
+  <h1> Multiplication </h1>
+  <h1> Division {div}</h1>
+    </>
+  )
+}
+export default Gowtham*/
+// ----------------------------20.Destructing object + return array------------------
+/*function Gowtham()
+{
+  const mydetails={
+    rno:1001,
+    name:"gowthaman",
+    tamil:88,
+    english:88,
+    maths:100
+  }
+  const myfun=({rno,name,tamil,english,maths})=>
+  {
+    return [rno,name,tamil,english,maths]
+  }
+  const [r,n,t,e,m]=myfun(mydetails)
+
+  return(
+    <>
+    <h1>Roll Number:{r}</h1>
+    <h1>Student Name:{n}</h1>
+    <h1>Tamil:{t}</h1>
+    <h1>English:{e}</h1>
+    <h1>Maths:{m}</h1>
+    </>
+  )
+}
+export default Gowtham*/
+// ------------------------ 21. Destructing Nested Object and return array--------------
+function Gowtham()
+{
+  const mydetails={
+    rno:1001,
+    name:"gowthaman",
+    marks:{
+            tamil:88,
+            english:98,
+            maths:100
+          }
+  }
+  // ragul idea
+/*  const myfun=({rno,name,marks:{tamil},marks:{english},marks:{maths}})=>
+  {
+    return [rno,name,tamil,english,maths]
+  }
+  */
+ // gowtham idea
+ const myfun=({rno,name,marks})=>
+ {
+  return [rno,name,marks.tamil,marks.english,marks.maths]
+ }
+  const [r,n,t,e,m]=myfun(mydetails)
+
+  return(
+    <>
+    <h1>Roll Number:{r}</h1>
+    <h1>Student Name:{n}</h1>
+    <h1>Tamil:{t}</h1>
+    <h1>English:{e}</h1>
+    <h1>Maths:{m}</h1>
+    </>
+  )
+}
+export default Gowtham
+
