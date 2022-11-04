@@ -442,4 +442,183 @@ function Gowtham()
   )
 }
 export default Gowtham
+*/
+//----------------------22. spread opeator(...) Basic ..........................
+/*function Gowtham()
+{
+  const arr1=[11,22,33,44]
+  const arr2=[44,55,66,77]
 
+  const comarr=[...arr1,...arr2]
+  return(
+    <>
+    <h1>Array 1 {arr1}</h1>
+    <h1>Array 2 {arr2}</h1>
+    <h1>Combine Array: {comarr}</h1>
+    </>
+  )
+}
+export default Gowtham
+*/
+//----------------------- 23. spread operator with destructive array.............
+/*function Gowtham()
+{
+  const arr1=[11,22,33,44,66,77,88,99]
+  
+  const [a1,a2,...a3]=arr1
+  return(
+    <>
+    <h1>Array at index 0 : {a1}</h1>
+    <h1>Array at index 1 : {a2}</h1>
+    <h1>Array at index 2 onwards : {a3}</h1>
+    </>
+  )
+}
+export default Gowtham*/
+//---------------------- 24.Spread operator using object-------------------------
+/*
+function Gowtham()
+{
+const obj1={
+    rno:1001,
+    name:"raja",
+    mark:10
+}
+const obj2={
+  rno:1001,
+  name:"raja",
+  mark:100
+}
+const comobj={...obj1,...obj2}    // key must be unique
+                                  // if same key is found at both object
+                                  // it will take last object key & value
+return(
+  <>
+    <h1>  Object1 :  {obj1.rno} {obj1.name} {obj1.mark}</h1>
+    <h1>  Object2 :  {obj2.rno} {obj2.name} {obj2.mark}</h1>
+    <h1>{comobj.rno}</h1>
+    <h1>{comobj.name}</h1>
+    <h1>{comobj.mark}</h1>    
+  </>
+)
+}
+export default Gowtham
+*/
+// ------------------25. modules (use: global variable)------------------
+// global variables: we can access anywhere in the project--------------
+// step 1: module create (Ragul.js--> src--> right click-->new file)
+/*import {name,rno} from './Ragul'
+function Gowtham()
+{
+  return(
+    <>
+    <h1>Roll number : {rno}</h1>
+    <h1>Name        : {name}</h1>
+    </>
+  )
+}
+export default Gowtham*/
+
+//------------------- 26. packages --> collection of moudles (.js files)-----------
+/*
+import { mymark,myname,mynative } from "./mymodules/File1";
+import FunComponent from "./mymodules/File2";
+function Gowtham()
+{
+  return(
+    <>
+      <h1>file 1 from mymodules</h1>
+      <h1>my name : {myname}</h1>
+      <h1>my mark  : {mymark}</h1>
+      <h1>my native : {mynative}</h1>
+      <hr></hr>
+      <h1>file 2 from mymodules</h1>
+      <FunComponent/>
+      <hr></hr>      
+    </>
+  )
+}
+export default Gowtham*/
+//---------------------------- 27. Ternary operatio or conditional operator-----------
+// ------------------------------- using modules and packages-------------------------
+// steps: folder create --> insert 2 files 1 .fun comp 2. class comp------------------
+/*
+import FunComponent from "./mymodules/File2";
+import ClassComp from "./mymodules/File3";
+function Gowtham()
+{
+  let isLogin=true
+  let result= isLogin ? <FunComponent/> : <ClassComp/>
+  return(
+    <>
+    {result}
+    </>
+  )
+}
+export default Gowtham*/
+//---------------------------28. ternary operator greatest among 2 no's--------
+/*function Gowtham()
+{
+  var a=88
+  var b=144
+  var c=a>b ?  a : b
+  return(
+    <>
+    <h1>Biggest number:{c}</h1>
+    </>
+  )
+}
+export default Gowtham*/
+//---------------------------29. ternary operator greatest among 3 no's--------
+/*function Gowtham()
+{
+  var a=3388
+  var b=1444
+  var c=874
+  var d=(a>b && a>c) ? a : (b>c?b:c)
+  return(
+    <>
+    <h1>Biggest number:{d}</h1>
+    </>
+  )
+}
+export default Gowtham*/
+// //------------------- 30. if statements ------------------------------------
+/*function Gowtham()
+{
+  var res="Fail"
+  let mark=49
+  if (mark>49)
+      var res="Pass"
+  return(
+    <>
+      <h1>Result:</h1>
+      <h1>{res}</h1>      
+    </>
+  )
+  
+}
+export default Gowtham*/
+//------------------------31.properties : react:props keyword-----------------------------
+// use:  like function arguments or parameters
+/*  syntax:(index.js)
+    <component_name propertyname=value />
+    syntax:(App.js)
+    function Gowtham(props)
+    {
+      return(
+        {props.propertyname}
+      )
+    }
+
+*/
+function Gowtham(props)
+{
+  return(
+    <>
+      <h1>Arguments or Parameter Passing</h1>
+      <h2>Your Mark:{props.mark}</h2>
+    </>
+  )
+}
+export default Gowtham
