@@ -155,3 +155,36 @@ class Car extends React.Component {
 }
 
 ReactDOM.render(<Car />, document.getElementById('root'));
+//----------------------------------------37. react state --------------
+// this.state is inbuit object(json)
+
+import React from 'react'
+class App extends React.Component
+{
+  constructor(props)
+  {
+    super(props)
+    this.state={
+      sno:1,
+      sname:'gokulnath',
+      mark:{
+        tamil:89,
+        english:88,
+        maths:100
+      }
+    }
+  }
+render()
+{
+  return(
+    <>
+     <h1> serial number :{this.state.sno}</h1>
+     <h1> Student Name: {this.state.sname}</h1>
+     <h1>Student tamil mark : {this.state.mark.tamil}</h1> 
+     <h1>Student english mark : {this.state.mark.english}</h1> 
+     <h1>Student maths   mark : {this.state.mark.maths}</h1> 
+    </>
+  )
+}
+}
+export default App
