@@ -622,3 +622,56 @@ function Gowtham(props)
   )
 }
 export default Gowtham
+
+//------------------------------------------------32. props using object + nested object -----------------------------
+
+function App(props)
+{
+  return( 
+    <>  
+      <h1> Roll number: {props.data.sno}</h1>
+      <h1> Name       : {props.data.sname}</h1>
+      <h1> address       : {props.data.address}</h1>
+      <h1> phone       : {props.data.ph}</h1>
+      <h1> bloodgroup  : {props.data.bloodgroup}</h1>
+      <h1> nickname       : {props.data.nickname}</h1>
+
+    </>    
+    )
+}
+export default App*/
+import React from "react";
+class App extends React.Component
+{
+   constructor(props)
+   {
+    super(props)
+   }
+  render()
+  {
+    return(
+      <>
+        <h1>Roll number   : {this.props.data.rno}</h1>  
+        <h1>Student name  : {this.props.data.name}</h1>  
+        <h1>Tamil         : {this.props.data.marks.tamil}</h1>  
+        <h1>English       : {this.props.data.marks.english}</h1>  
+        <h1>Maths         : {this.props.data.marks.maths}</h1>          
+        </>
+    )
+  }
+}
+export default App
+
+index.js
+----------
+import ReactDOM from 'react-dom/client';
+const mydetails={
+  rno:1001,
+  name:'ragul',
+  marks:{
+      tamil:88,
+      english:99,
+      maths:44
+  }
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App data={mydetails}></App>)
