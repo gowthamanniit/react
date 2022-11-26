@@ -675,3 +675,250 @@ const mydetails={
   }
 }
 ReactDOM.createRoot(document.getElementById("root")).render(<App data={mydetails}></App>)
+
+
+/----------------------------------------37. react state --------------
+// this.state is inbuit object(json)
+/*
+import React from 'react'
+class App extends React.Component
+{
+  constructor(props)
+  {
+    super(props)
+    this.state={
+      sno:1,
+      sname:'gokulnath',
+      mark:{
+        tamil:89,
+        english:88,
+        maths:100
+      }
+    }
+  }
+render()
+{
+  return(
+    <>
+     <h1> serial number :{this.state.sno}</h1>
+     <h1> Student Name: {this.state.sname}</h1>
+     <h1>Student tamil mark : {this.state.mark.tamil}</h1> 
+     <h1>Student english mark : {this.state.mark.english}</h1> 
+     <h1>Student maths   mark : {this.state.mark.maths}</h1> 
+    </>
+  )
+}
+}
+export default App
+*/
+//--------------38 changing the state object ----------------------------------------
+//------------- this.setState is used to change the object values---------------------
+/*
+import React from 'react'
+class App extends React.Component
+{
+  constructor(props)
+  {
+    super(props)
+    this.state={
+      rno:1001,
+      sname:'pradeep',
+      mark:10
+    }
+  }
+  
+  render()
+  {
+    const changeMark=()=>{
+      //alert('test')
+      this.setState({mark:100})
+    }
+    return(
+      <>
+        <h1>Roll number : {this.state.rno}</h1>
+        <h1>Student name: {this.state.sname}</h1>
+        <h1>Mark        : {this.state.mark}</h1>
+        {/*<h1>{changeMark()}</h1>*//*}
+    <button onClick={changeMark}>Click Me Change Mark</button>
+      </>
+    )
+  }
+}
+export default App
+*/
+
+//--------------------------39.life cycle of react components --------------------
+// 3 types.   1.mounting 2. updating 3. unmounting-------------------------------
+// 1.mounting:     1.constructor 2.getdrivedstatefromprops(remmoved)3.render 4. componentdidmount
+/*
+import React from 'react'
+class App extends React.Component
+{
+  constructor(props)    // auto call (1st)
+  {
+    super(props)
+    this.state={
+      rno:1001,
+      sname:'raja',
+      mark:100
+    }
+   }
+   shouldComponentUpdate()
+   {
+    return true;
+   }
+   componentDidUpdate(){
+    document.getElementById("amark").innerHTML=this.state.mark
+    document.getElementById("aname").innerHTML=this.state.sname
+   } 
+   getSnapshotBeforeUpdate(prevProps,prevState)
+   {    
+    document.getElementById("bmark").innerHTML=prevState.mark
+    document.getElementById("bname").innerHTML=prevState.sname
+   }
+
+   componentDidMount(){
+    setTimeout(()=>{this.setState({sname:'gokul',mark:35})},4000)
+   }
+   /*
+  componentDidMount() {      // auto call (3rd time)
+    setTimeout(() => {
+      this.setState({mark:0})
+    }, 5000)
+  }*/
+  /*
+  render()            //  2nd time index.js  <App/>
+  {
+      return(
+        <>
+          <h1> this is render method </h1>
+          <h2>roll no:{this.state.rno}</h2>
+          <h2>name   :{this.state.sname}</h2>
+          <h2>mark   :{this.state.mark}</h2>
+          
+          before update Mark:<span id="bmark"></span><br/>
+          before updat Name:<span id="bname"></span><br/>
+          after update Mark:<span id="amark"></span><br/>
+          after update Name:<span id="aname"></span><br/>
+                   
+        </>
+      )
+  }
+}
+export default App
+// ...................2.updating.............................
+/*
+getDerivedStateFromProps()----------> removed
+shouldComponentUpdate()
+render()
+getSnapshotBeforeUpdate()
+componentDidUpdate()
+*/ 
+
+//------------------3.unmounting.................................
+//1. componentWillUnmount ---------> remove / delete values
+/*
+import React from 'react'
+class Child extends React.Component
+{
+componentWillUnmount()
+{
+  alert("component removed")
+}
+
+  render()
+  {
+    return(
+      <>
+      <h1> This is child class</h1>
+      <h1> This is child class</h1>
+      <h1> This is child class</h1>
+      <h1> This is child class</h1>
+      </>
+    )
+  }
+}
+class App extends Child
+{
+  constructor(props)
+  {
+    super(props)
+    this.state={
+      show:true
+    }
+  }
+  render()
+  {
+  const delComponent=()=>
+  {
+    this.setState({show:false})
+  }
+ 
+    let mycomponet
+    if(this.state.show==true)
+    {
+      mycomponet=<Child/>
+    } 
+    return(
+      <>
+        {mycomponet}
+        <h1>This is App Component</h1>
+        <button onClick={delComponent}>Remove component</button>
+      </>
+    )
+  }
+}
+export default App
+*/
+//------------------------------------ 45. React Events -----------------------
+//--------------onClick onChange onSubmit onBlur  onLoad  ..................
+// react event basic
+/*
+function App()
+{
+  const show=()=>{
+    alert("button clicked")
+  }
+   return(
+      <>
+      <h1>this is function componet </h1>
+      <button onClick={show}>ClickMe</button>
+      </>
+  )
+}
+export default App
+*/
+//------------------------------------ 46. React Events -----------------------
+//--------------onClick onChange onSubmit onBlur  onLoad  ..................
+// react event : argument or parameter passing
+function App()
+{
+  const show=(s,m,e)=>{
+    alert("Event Button:"+e.type)
+    document.getElementById("res").innerHTML="Button Clicked :<br> name:"+s+"<br> Mark:"+m
+  }
+  const dis=(e)=>{
+    alert("Event Text:"+e.type)
+  }
+  const dis2=(e)=>{
+    alert("Event Tex:"+e.type+" cursor move to outside")
+  }
+  const dis3=(e)=>{
+  //  alert("Event Tex:"+e.type+" cursor move to inside")
+    document.getElementById("t1").value="cursor inside"+e.type
+  }
+  
+   return(
+      <>
+      <h1>this is function componet </h1>
+      
+      <input id="t1" type="text" onFocus={(event1)=>dis3(event1)}></input> <br></br>
+      <input type="text" onBlur={(event)=>dis2(event)}></input> <br></br>
+      <input type="text" onChange={(event)=>dis(event)}></input> <br></br>
+      <button onClick={(event)=>show("Gokul",99,event)}>ClickMe</button>
+ 
+      <div id="res"></div>
+      </>
+  )
+}
+export default App
