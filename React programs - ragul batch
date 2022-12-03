@@ -922,3 +922,218 @@ function App()
   )
 }
 export default App
+//----------------------------------React Events---------------------------
+/*
+function Surya()
+{
+  const myfun=()=>
+  {
+  var a=document.getElementById("t1").value
+  document.getElementById("ans").innerHTML=a
+  }
+  const dis1=()=>
+  {
+    //alert("cursor moved to outside")
+    document.getElementById("ans1").innerHTML="cursor moved to outside textbox"
+    
+  }
+  const dis2=()=>
+  {
+    document.getElementById("ans1").innerHTML="cursor moved to inside textbox"
+    
+  }
+  let mydata=""
+  const dis3=()=>
+  {
+    mydata=document.getElementById("t1").value
+    document.getElementById("ans1").innerHTML="you typing ...."+mydata
+    
+  }
+  const overfun=()=>
+  {
+    document.getElementById("b1").style.backgroundColor="green"
+  }
+  const outfun=()=>
+  {
+    document.getElementById("b1").style.backgroundColor="white"
+  }
+  
+  return(
+    <>
+    Enter your text:<input type="text" onChange={dis3} onFocus={dis2} onBlur={dis1} id="t1"></input>
+    
+    <button id="b1" onClick={()=>myfun()} onMouseOut={outfun} onMouseOver={overfun}>ClickMe</button>
+    
+    <div id="ans"></div>
+    <div id="ans1"></div>
+    </>
+  )
+}
+export default Surya
+*/
+//------------------------------------- react looping-----------------------------
+// map method is used to acheive loop-----------------------------------------
+/*
+function Myfun(props)
+{
+  return <li>{props.name}</li>
+}
+function Surya()
+{
+  const myarr=["gokul","pradeep","jaya","surya","ragul","priya","gowthaman"]
+  return(
+    <>
+    /*
+      <h1>{myarr[0]}</h1>
+      <h1>{myarr[1]}</h1>
+      <h1>{myarr[2]}</h1>
+    */
+    /*        {myarr.map((v) => <h2>{v}</h2>)} */
+    /*}
+    <ol type="I">
+    {myarr.map((data)=><Myfun name={data}></Myfun>)}
+  </ol>
+    </>
+  )
+}
+export default Surya*/
+//-------------------------- find event type ----------------------------------
+/*
+function Surya()
+{
+  const myfun=(v)=>
+  {
+    document.getElementById("ans").innerHTML=v.type
+  }
+  const dis=(v)=>
+  {
+    document.getElementById("ans").innerHTML=v.target.value
+  }
+  return(
+    <>
+      <input type="button" value="click me jaya" id="b1" onClick={(event)=>dis(event)} ></input>
+      <button id="b2" onMouseOver={(event)=>myfun(event)} >ClickMe</button>    
+      <input type="text" id="t1" onFocus={(event)=>dis(event)} ></input>
+      <div id="ans"></div>
+    </>
+  )
+}
+export default Surya
+*/
+//---------------------------------------React Form advanced--------------------------------
+/*
+function Surya()
+{
+  return(
+    <form>
+      <label>Enter User Name:
+      <input type="text"></input>
+      </label>
+    </form>
+  )
+}
+export default Surya
+*/
+//---------------------------------- React Form + React Hook (useState) ---------------------
+// header file: import {useState} from 'react'
+// variable declare & define:  const [var1,var2]=useState("value")
+// var1:  default value(inside the setState)              var2: changes value (change useState : default value to user typed value)
+/*
+import { useState } from "react"
+function Surya()
+{
+  const [name,setName]=useState("surya")
+  const [mark,setMark]=useState(100)
+  return(
+    <form>
+      <label>Enter Your Name
+    <input type="text" onChange={(event)=>{setName(event.target.value)}} value={name}></input>
+      </label>
+      <label>Enter Your Mark
+    <input type="text" onChange={(event)=>{setMark(event.target.value)}} value={mark}></input>
+      </label>
+    </form>
+  )
+}
+export default Surya*/
+//-------------------------- react form + hook + submit button + onSubmit event -----------
+/*
+import { useState } from 'react'
+function Surya()
+{
+  const [name,setName]=useState("surya")
+  const [mark,setMark]=useState(100)
+const myfun=(event)=>
+{
+  event.preventDefault()  // don't refresh
+  alert("submit button pressed:"+name+" "+mark)
+}
+  return(
+    <form onSubmit={myfun}>
+      <label>Enter Your Name
+    <input type="text" onChange={(event)=>{setName(event.target.value)}} value={name}></input>
+      </label>
+      <label>Enter Your Mark
+    <input type="text" onChange={(event)=>{setMark(event.target.value)}} value={mark}></input>
+      </label>
+      <input type="submit"></input>
+    </form>
+  )
+}
+export default Surya
+*/
+//----------------------React form (TextArea) + react hook ------------------
+// input type=button ----> in default page does not refresh ----------------
+/*
+import { useState } from 'react'
+function Surya()
+{
+  const[address,setAddress]=useState("default address \nsecond line \nThird Line")
+  const changeAddress=(event)=>
+  {
+    event.preventDefault(); // without refresh
+    alert(address)
+  }  
+return(
+  <form method="get" action="https://www.google.com" target='_blank'>
+    <h1>TextArea - multiline purpose </h1>
+    <label>Enter Your Feedback
+      <textarea rows="5" cols="30" value={address} onChange={(e)=>{setAddress(e.target.value)}}></textarea>
+    </label>
+    <input type="button" onClick={changeAddress} value="clickme"></input>
+    <button onClick={changeAddress}>button</button>
+    <input type="submit" onClick={changeAddress} value="submit button"></input>
+    <input type="submit" value="submit button"></input>
+
+  </form>
+)
+}
+export default Surya
+*/
+import { useState } from 'react'
+function Surya()
+{
+  const[address,setAddress]=useState("namakkal")
+  const changeAddress=(event)=>
+  {
+    setAddress(event.target.value)
+  }  
+  const myfun=(event)=>
+  {
+    event.preventDefault()
+    alert(address)
+  }
+return(
+  <form onSubmit={myfun}>
+        <select value={address} onChange={changeAddress}>
+    <option value="covai">covai</option>
+    <option value="Trichy">Trichy</option>
+    <option value="karur">karur</option>
+    <option value="namakkal">namakkal</option>
+    <option value="salem">salem</option>
+    </select>
+    <input type="submit" value="submit button"></input>
+  </form>
+)
+}
+export default Surya
