@@ -1137,3 +1137,188 @@ return(
 )
 }
 export default Surya
+import { useState } from 'react'
+function App()
+{
+  const[month,setMonth]=useState("may")
+  return(
+    <>
+        <select size="10"   multiple>
+        <option>january</option>
+        <option>February</option>
+        <option>march</option>
+        <option>april</option>
+        <option>may</option>
+        <option>june</option>
+        <option>july</option>
+        <option>August</option>
+        <option>September</option>
+        </select>
+    </>
+  )  
+}
+export default App
+*/
+// Radio Button Management in React-----------------------------------
+/*
+function App()
+{
+  const show=(event)=>{
+    //alert(event.target.type)
+    //alert(event.type)
+    //alert(event.target.value)
+    if (document.getElementById("g1").checked===true)
+    alert(document.getElementById("g1").value)
+    else if(document.getElementById("g2").checked===true)
+    alert(document.getElementById("g2").value)
+    else if(document.getElementById("g3").checked===true)
+    alert(document.getElementById("g3").value)
+    else
+    alert("please select any one of the option")
+
+  }
+  return(
+    <>
+    <input type="radio" id="g1" name="gen" value="male" /> Male <br></br>
+    <input type="radio" id="g2" name="gen" value="female" /> FeMale <br></br>
+    <input type="radio" id="g3" name="gen" value="others" /> Others <br></br>
+    <input type="button" value="click me" onClick={(event)=>show(event)}></input>
+    </>
+  )
+}
+export default App
+
+*/
+
+// checkbox management
+/*
+function App()
+{
+  const show=(event)=>{
+    event.preventDefault()
+    var ans=" "
+    if (document.getElementById("c1").checked===true)
+      ans=ans+document.getElementById("c1").value+" "
+      if (document.getElementById("c2").checked===true)
+      ans=ans+document.getElementById("c2").value+" "
+      if (document.getElementById("c3").checked===true)
+      ans=ans+document.getElementById("c3").value+" "
+      if (document.getElementById("c4").checked===true)
+      ans=ans+document.getElementById("c4").value+" "
+      if (document.getElementById("c5").checked===true)
+      ans=ans+document.getElementById("c5").value+" "
+      console.log(ans)
+  }
+  const testfun=(event)=>{
+    if(event.target.checked===true && event.target.id==="c5")
+    {
+      document.getElementById("c1").checked=false
+      document.getElementById("c2").checked=false
+      document.getElementById("c3").checked=false
+      document.getElementById("c4").checked=false
+    }
+    if(event.target.checked===true && (event.target.id==="c1" ||event.target.id==="c2" ||event.target.id==="c3" ||event.target.id==="c4")) 
+    document.getElementById("c5").checked=false
+  }
+  return(
+    <form onSubmit={show}>
+    <label>Select Your Language:</label><br></br>
+    <input id="c1" onChange={(event)=>testfun(event)} value="C" type="checkbox" /> C <br></br>
+    <input id="c2" onChange={(event)=>testfun(event)} value="C++" type="checkbox" /> C++ <br></br>
+    <input id="c3" onChange={(event)=>testfun(event)} value="PYTHON" type="checkbox" /> PYTHON <br></br>
+    <input id="c4" onChange={(event)=>testfun(event)} value="JAVA" type="checkbox" /> JAVA <br></br>
+    <input id="c5" onChange={(event)=>testfun(event)} value="None of these above" type="checkbox" /> None of these above <br></br>
+    <input type="submit" value="result"></input>
+    </form>
+  )
+}
+export default App
+*/
+/*
+import React from 'react'
+import { useForm } from 'react-hook-form'
+function App()
+{
+  const { register , handleSubmit } = useForm()
+  const handleRegistration=(data)=> console.log(data)
+return(
+  <form onSubmit={handleSubmit(handleRegistration)}>
+    <label>Enter Name</label>
+    <input name="name" {...register('name')} />
+    <br></br>
+    <label>Email</label>
+    <input type="email" name="email" {...register('email')} />
+  <br></br>
+  <button>submit</button>
+  </form>
+)
+}
+export default App
+*/
+//--------------------------------react list box -----------------------
+//export default function App(){}
+// or
+//function App()
+// or
+/*
+const App=()=>
+{
+  const show=(event)=>
+  {
+      event.preventDefault()
+    var ans="";
+    if (document.getElementById("c1").selected===true)
+    ans=ans+document.getElementById("c1").value
+    if (document.getElementById("c2").selected===true)
+    ans=ans+document.getElementById("c2").value
+    if (document.getElementById("c3").selected===true)
+    ans=ans+document.getElementById("c3").value
+    if (document.getElementById("c4").selected===true)
+    ans=ans+document.getElementById("c4").value
+    if (document.getElementById("c5").selected===true)
+    ans=ans+document.getElementById("c5").value
+    if (document.getElementById("c6").selected===true)
+    ans=ans+document.getElementById("c6").value
+    if (document.getElementById("c7").selected===true)
+    ans=ans+document.getElementById("c7").value
+    alert(ans)
+  }
+return (
+  <form onSubmit={(event)=>show(event)}>
+      <select id="course" size="7" multiple>
+      <option id="c1" value="c">c</option>
+      <option id="c2" value="C++">c++</option>
+      <option id="c3" value="Python programming">python</option>
+      <option id="c4" value="React">react</option>
+      <option id="c5" value="mongo-db">mongodb</option>
+      <option id="c6" value="oracle">oracle</option>
+      <option id="c7" value="sqlserver">sqlserver</option>
+      </select>
+      <input type="submit" value="click me"></input>
+  </form>
+)
+}
+export default App
+
+*/
+// ------------useForm react hooks ------------------------------------
+import { useForm } from "react-hook-form";
+function App()
+{
+  const { register, handleSubmit } = useForm()
+  const myfun=(data)=>{
+    console.log(data)
+  } 
+  return(
+      <form onSubmit={handleSubmit(myfun)}>
+      <h1> Hook Use Form</h1>
+      <input type="text" name="un" {...register("un")} />
+      <br></br>
+      <input type="password" name="pw" {...register("pw")} />
+      <br></br>
+      <input type="text" name="city" {...register("city")} />
+      <input type="submit" value="show all input data" />
+      </form>
+  )
+}
+export default App
