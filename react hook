@@ -1,3 +1,14 @@
+What are Hooks
+React hooks are like Anchor 
+
+rules:
+Only work with function based components, not with class based components.
+Both arrow and regular function component works
+Cannot nest hooks inside loops, conditions or nested functions
+
+useState()
+def:useState hook provides you with functionality to set state for a variable and automatically update the DOM with the new state
+-------------------------------------------------------
 import React, { useState } from 'react';
 import './App.css';
 
