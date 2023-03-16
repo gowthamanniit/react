@@ -1,0 +1,20 @@
+import { useForm } from "react-hook-form";
+function Gowtham()
+{
+  const{register,handleSubmit,formState:{ errors }}=useForm()
+  const myfun=(data)=>{
+    alert(data.name)
+    console.log(data)
+  }
+  return(
+      <form onSubmit={handleSubmit(myfun)}>
+        <h1>React Hook Form Error Handling</h1>
+        Enter User Name:<input type="text" {...register("name",{required:true,minLength:8})}></input>
+        {errors.name && errors.name.type==="required" && (<font color='red'>* must be filled</font>) }
+        {errors.name && errors.name.type==="minLength" && (<font color='red'>* min lenght should be 8 chars</font>) }
+        <br></br>
+        <input type="submit"></input>
+      </form>
+  )
+}
+export default Gowtham
