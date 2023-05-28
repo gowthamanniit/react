@@ -9,12 +9,45 @@ function Gowtham()
   return(
       <form onSubmit={handleSubmit(myfun)}>
         <h1>React Hook Form Error Handling</h1>
-        Enter User Name:<input type="text" {...register("name",{required:true,minLength:8})}></input>
+        Enter User Name:<input type="text" name="name" {...register("name",{required:true,minLength:8})}></input>
         {errors.name && errors.name.type==="required" && (<font color='red'>* must be filled</font>) }
         {errors.name && errors.name.type==="minLength" && (<font color='red'>* min lenght should be 8 chars</font>) }
         <br></br>
         <input type="submit"></input>
       </form>
+  )
+}
+export default Gowtham
+=================================model2============================
+import { useForm } from 'react-hook-form'
+function Gowtham()
+{
+  const { register,handleSubmit,formState:{errors} }=useForm()
+const myfun = (data)=>
+{
+  //console.log(data)
+  //console.log(data.un+"  "+data.pw+"  "+data.e)
+  document.getElementById("res1").innerHTML="User Name:"+data.un
+  document.getElementById("res2").innerHTML="Password :"+data.pw
+  document.getElementById("res3").innerHTML="Email    :"+data.e
+}
+
+  return(
+    <form onSubmit={handleSubmit(myfun)}>
+    <h1>Welcome To React hook (useForm)</h1>
+    <input type="text" name="un" {...register("un",{required:true,minLength:8})}></input>
+    {errors.un && errors.un.type==="required" && <font color='red'>Must Fill un</font>}
+    {errors.un && errors.un.type==="minLength" && <font color='red'>min 8 chars need</font>}
+
+
+    <input type="password" name="pw" {...register("pw")}></input>
+    <input type="email" name="e" {...register("e")}></input>
+    <input type="submit"></input>
+    <div id="res1"></div>   
+    <div id="res2"></div>   
+    <div id="res3"></div>   
+
+    </form>
   )
 }
 export default Gowtham
