@@ -1,0 +1,58 @@
+useEffect Hook:
+============
+use: 
+*)automattically called very first time
+*)automattically called when chagnges using event(onChange,onClick,onSubmit,..) in return 
+
+header file:
+import { useEffect } from 'react'
+
+syntax:
+
+function functionname()
+{
+	useEffect(()=>{
+	...............auto call when change the values in return
+	})
+	return(
+	
+	)
+}
+export default functionname
+
+ex:1
+import { useState,useEffect } from 'react'
+function Gowtham()
+{
+const[name,setName]=useState("adaikalasamy")
+
+useEffect(()=>{
+  document.title=`Hello ${name}`
+})
+  return(
+    <>
+      <h1>React Hook - useEffect</h1>
+      <button onClick={()=>{setName("dinesh")}}>Change Name</button>
+    </>
+  )
+}
+export default Gowtham
+
+ex:2
+import { useState,useEffect } from 'react'
+function Gowtham()
+{
+const[name,setName]=useState("adaikalasamy")
+
+useEffect(()=>{
+  document.title=`Hello ${name}`
+})
+  return(
+    <>
+      <h1>React Hook - useEffect</h1>
+      <input type="text" onChange={(event)=>{setName(event.target.value)}}></input>
+      <button onClick={()=>{setName("dinesh")}}>Change Name</button>
+    </>
+  )
+}
+export default Gowtham

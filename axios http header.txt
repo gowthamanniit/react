@@ -1,0 +1,40 @@
+Axios HTTP Header
+===============
+what is httpheader ?
+	URL or API
+	ex:
+request:	www.websitename.com?var=value&var2=....
+response: json format
+
+
+prerequest:
+==========
+React Hook - useState
+React Hook - useEffect
+Strong knowledge in ternary operator or if statement with mutliple conditions
+-------------------------------------
+how to install axios?
+	npm install axios --save
+
+syntax:1 (success)
+=============
+
+	axios.get(baseurl).then((reponse)=>{ ... response.data... })
+
+ex:1
+	import { useState,useEffect } from 'react'
+
+	function App()
+	{
+	const [info,setInfo]=useState(null)
+	useEffect(()=>{
+		axios.get("https://api.openweathermap.org/data/2.5/weather?q=karur&appid=3fd756d3c6233eecf8a57b9da9ce4d07").then((response)=>{
+		setInfo(response.data)
+	})
+	})
+
+
+	}
+
+
+

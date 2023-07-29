@@ -1,0 +1,69 @@
+React Hook:
+
+type 2: UseForm
+============
+install react hook form:
+
+d:/project/app> npm install react-hook-form
+
+use:  to get form all input values.
+
+header file:
+
+import { useForm } from 'react-hook-form'
+
+declaration:
+=========
+const {register,handleSubmit } =useForm()
+
+handleSubmit------>use---> onSubmit event calling -->view data
+register-----------------------> to store all form input data
+
+
+note: register ---> keyword don't change
+         handleSubmit-->keyword don't chagne
+how to register:
+============
+const myfun=(d)=>{
+console.log(d)
+}
+.............
+<form onsSubmit={handleSubmit(myfun)}>
+<input type="text" name="t1" {...register("t1")}></input>
+<input type="email" name="e1" {...register("e1")}></input>
+<input type="submit"></input>
+</form>
+===========================================
+output: browser -->f12 press --> console.
+
+
+example:
+======
+import { useForm } from 'react-hook-form'
+function Gowtham()
+{
+  const { register,handleSubmit }=useForm()
+const myfun = (data)=>
+{
+  console.log(data)
+document.getElementById("res1").innerHTML="User Name:"+data.un
+  document.getElementById("res2").innerHTML="Password :"+data.pw
+  document.getElementById("res3").innerHTML="Email    :"+data.e
+}
+}
+
+  return(
+    <form onSubmit={handleSubmit(myfun)}>
+    <h1>Welcome To React hook (useForm)</h1>
+    <input type="text" name="un" {...register("un")}></input>
+    <input type="password" name="pw" {...register("pw")}></input>
+    <input type="email" name="e" {...register("e")}></input>
+    <input type="submit"></input>
+  <div id="res1"></div>
+  <div id="res2"></div>
+  <div id="res3"></div>    
+    </form>
+  )
+}
+export default Gowtham
+
