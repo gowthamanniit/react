@@ -1,0 +1,15 @@
+function Gowtham()
+{
+  var arr=[11,2,33,44,5,77,899,56]
+  var big=0
+  return(
+      <>
+      <h1>Find Biggest Number using loop + if  combines - in react</h1>
+      <ol start={0}>{arr.map((n)=><li> ----&gt; {n}<br></br></li>)}</ol>
+      <div style={{display:"none"}}>{arr.map((n)=><>{big<n && <>{big=n}<br></br></>}</>)}</div>
+      <h1>Biggest Number:{big}</h1>
+      </>
+
+  )
+}
+export default Gowtham

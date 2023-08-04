@@ -1,0 +1,46 @@
+		note very important:
+		====================
+		how to import moduels? (js file)
+
+		syntax:
+
+		import functionname from './filename'			
+
+		ex:
+		import App from './App'
+
+	
+		.  ---> automattically allocate previous folder
+		ex: d:/myreactproject/myapp/src/----
+			
+
+		how to import file without function or class? 
+		---------------------------------------------
+
+		syntax:
+		import './filename.css'
+
+		how to import image ?
+		-----------------------
+		syntax:
+
+		import userdefinename from './imagename.jpg'
+
+		ex:
+
+		import logo from './images/gowtham.jpg'
+
+		. meaning-->d:/myreactproject/myapp/src
+
+		how to create external or userdefined folder?
+		---------------------------------------------
+		myapp/src select --> new folder click --> anyname
+
+		ex:
+
+		d:/myreactproject/myapp/src/images/gowtham.jpg
+
+
+		
+
+	

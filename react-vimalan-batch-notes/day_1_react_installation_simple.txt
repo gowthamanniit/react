@@ -1,0 +1,46 @@
+Notes:  installation react
+===========================
+	step 1:
+		create one folder
+		ex: d:/myreactproject
+		note: don't use space/ keywords link react , node.....
+
+	step 2: open vs code
+		file--> open folder --> select your folder(d:/myreactproject)
+
+	step 3: goto terminal menu --> new terminal --> npm install -g create-react-app
+
+					(only one time installation)
+		npm --- > node package manager
+		-g   ---> global
+		wait 2 mins
+	step 4:
+		d:/myreactproject> npx create-react-app appname
+
+		here app name is userdefine
+		ex:
+		d:/myreactproject> npx create-react-app myapp
+
+		wait 10 to 20 mins
+	step 5:
+		d:/myreactproject> cd myapp
+		d:/myreactproject/myapp>npm start
+
+		automattically open browser -->see output.
+		react default port number: 3000
+		ex:
+		http://localhost:3000
+
+
+
+
+		
+	
+
+		
+
+	
+
+		
+
+	

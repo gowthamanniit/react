@@ -1,0 +1,36 @@
+How to use variables?
+=====================
+function App()
+{
+  var k=10
+  let b=20
+  const c=30
+  return(
+      <>
+      b value {b}
+      <h1>K value : {k}</h1>
+      <h2>b value :{b}</h2>
+      <h3>c value: {c}</h3>
+      </>
+  )
+}
+export default App
+=================================
+import React from 'react'
+class App extends React.Component
+{
+  render()
+  {
+    var k=100
+    let l=44
+    const c=19
+    return(
+      <>      
+        <h1>variable value:{k}</h1>
+        <h1>let      value:{l}</h1>
+        <h1>const    value:{c}</h1>        
+      </>
+    )
+  }
+}
+export default App

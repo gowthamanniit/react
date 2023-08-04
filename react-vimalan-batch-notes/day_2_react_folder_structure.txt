@@ -1,0 +1,52 @@
+folder structure:
+=================
+
+	myapp:
+
+		1)  node_modules   --> inbuilt packages
+					ex: react,react-dom,react-scripts...............
+		2)  public         --> 	
+					in default found index.html
+					<div id="root"></div>
+					-->this is final output 
+		3) src		   -->
+					in default found App.js 
+						--> react coding
+						--> front end coding
+				    --> in default found App.css
+						--> to apply styles
+
+				    --> in default found index.js file
+						--> document.getElementById("root").innerHTML
+							<App></App>
+
+
+
+		
+
+		
+
+
+
+
+			
+
+
+		
+
+		
+
+
+
+
+		
+
+
+	
+		
+						
+			
+	
+		
+	
+					

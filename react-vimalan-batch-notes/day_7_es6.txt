@@ -1,0 +1,15 @@
+1)class +constructor+ inheritance 
+2)arrow function 
+3)variables:
+
+	var		global + edit
+	let		local + edit
+	const		local + can't edit
+4)array .map method	
+ (looping purpose)
+{ arrayvariable.map((item)=><>{item}</>) }
+
+
+
+	
+		

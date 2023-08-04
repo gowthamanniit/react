@@ -1,0 +1,77 @@
+React Components:
+=================
+there are two components in react.
+
+	1) Function Component
+	2) Class Component
+
+	syntax:
+	
+	function functionname()
+	{
+		return content
+	}
+	export default functionname
+
+
+	ex:
+	function App()	
+	{
+		return <h1>welcome to react </h1>
+	}
+	export default App
+
+	multiline content:
+	=====================
+
+	ex:
+	function App()
+	{
+	return(
+		<>
+			<h1>header1</h1>
+			<h2>header2</h2>
+		</>
+	)
+	}
+
+	class component:
+	================
+	syntax:
+	import React from 'react'
+
+	note: React --> inbuilt class
+       	      react--> js file (node_modules inbuilt file)
+
+	class deriveclassname extends baseclassname
+	{
+		render()
+		{
+			return single line content	
+		}
+	}
+	export default deriveclassname
+
+	ex:
+	import React from 'react'
+	class App extends React.Component
+	{
+	  render()
+	  {
+	    return <h1>Welcome to Class Component</h1>
+	  }
+	}
+	export default App
+	
+
+	multi line contents:
+	=======================
+same as function (we must add top level element)
+		
+	return(
+		<>  or <div>
+		..........
+		.........
+		.............
+		</> or </div>
+		)

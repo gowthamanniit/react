@@ -1,0 +1,37 @@
+function Gowtham()
+{
+  var myelement={
+    backgroundColor:"red",
+    fontSize:"55px",
+    color:"white"
+  }
+  return(
+    <>
+    <h1 style={myelement}>This is internal css</h1>
+    <h1 style={myelement}>This is internal css</h1>
+    <hr></hr>
+    
+    <hr/>    
+    </>   
+  )
+}
+export default Gowtham
+*/
+/*
+function Gowtham()
+{
+  var a=50
+  var b=60
+  var c
+  return(
+    <>
+    <h1>Inline CSS</h1>
+      <h1 style={{backgroundColor:"red",textTransform:"uppercase",fontSize:"12px",display:"none"}}>This is inline css</h1>
+    c=a+b<br></br>
+    c={a}+{b} <br></br>
+    c={a+b}
+    </>
+  )
+
+}
+export default Gowtham

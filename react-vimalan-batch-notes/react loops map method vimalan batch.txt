@@ -1,0 +1,35 @@
+function Gowtham(Props)
+{
+  var s=0
+  var k=[2,1,20,3,5,7,10]
+    return(
+    <>  
+      
+        /*{k.map(item=><li>{item}&nbsp;</li>)}*/
+        /*k.map(item=><Evenfun v={s=s+item}/>)}*/
+        
+        /*{k.map(item=>{s=s+item})}*/
+        /*k.map(item=><Evenfun v={item}/>)*/
+        /*k.map(item=>(<>{item%2===1 && item}<br></br></>))*/
+        /*
+        {k.map(item=>(<>{item%2===0 && <>{s=s+item}</>}<br></br></>))}
+      <br></br>
+      <h1>Sum of all :{s}</h1>
+    </>
+  )
+}
+export default Gowtham
+*/
+/*
+function App()
+{
+  const months=["January","February","march","April","May","June","July","August","September","Ocoober","November","December"]
+return(
+  <>
+    <ol>
+      {months.map((item)=>(<li>{item}<br></br></li>))}  
+    </ol>
+  </>
+)
+}
+export default App

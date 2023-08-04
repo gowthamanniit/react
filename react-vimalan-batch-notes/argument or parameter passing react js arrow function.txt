@@ -1,0 +1,29 @@
+import './App.css'
+function Gowtham()
+{
+  var dis="{}"
+  var a=10
+  var b=20
+  var c
+  const show=()=>{
+    document.getElementById("res1").innerHTML="JSX button click without arguments"
+  }
+  const test=(m,n)=>{
+    document.getElementById("res2").innerHTML="JSX button click with parameters:"+(m+n)
+  }
+  return(
+    <>
+      <h1> React JSX - Javascript and XML </h1>
+      <h1>React JSx allows &lt;html&gt; tags</h1>
+      <h2> use: directly add html codes + expression {dis} </h2>
+      <div id="mydiv">{c=a+b}</div>
+      <h2>Total : {c}</h2>
+      
+      <input type="button" onClick={show} value="click me"></input>
+      <input type="button" onClick={()=>test(11,22)} value="click me"></input>
+      <div id="res1"></div>
+      <div id="res2"></div>
+    </>
+  )
+}
+export default Gowtham
