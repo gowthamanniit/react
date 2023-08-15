@@ -1,0 +1,64 @@
+API handling using useEffect Hook:
+==================================
+sample website for api key:
+==========================
+https://openweathermap.org/
+
+signin
+
+create an account
+
+username:gowthaman@niit-karur.com
+password:g-w@m#n!k~@a1d2$3
+
+click useraccount(top right)
+	--> my api keys
+copy api key: 3fd756d3c6233eecf8a57b9da9ce4d07
+
+note:
+If you register an new API key with OpenWeatherMap, it will be activated automatically, this typically takes between 10 minutes and 2 hours after your successful registration.
+
+
+click API menu -->scroll down(second page) -->  currect weather data
+--> API Doc click --> Built-in API request by city name
+-->
+https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+ex:
+https://api.openweathermap.org/data/2.5/weather?q=karur&appid=3fd756d3c6233eecf8a57b9da9ce4d07
+
+how to check api result using builtin app(postman)?
+======================================================
+
+open chrome -->download postman for windows--> downlaod windows 64 bit
+	--> 167 mb -->install.create free account --> signup with google
+--> open -->welcome message close -->overview near + button click.
+
+default: it will show get method.
+
+paste: get method:
+=====================
+https://api.openweathermap.org/data/2.5/weather?q=karur&appid=3fd756d3c6233eecf8a57b9da9ce4d07
+
+	
+result: json format
+	{
+	...:....,
+	}
+
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+
+	

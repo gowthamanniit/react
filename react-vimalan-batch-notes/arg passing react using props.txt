@@ -1,0 +1,130 @@
+react components:
+===============
+two types
+	1) function 
+	2) class
+
+1)function : basic
+	function Funname()
+	{
+		return(
+			<>
+			..........
+			</>
+			)
+	}
+	export default Funname
+function : advanced argument passing + expression{}
+def: props --> meaning: properties
+	use: to pass arguments from index.js file
+
+		<funname or classname attributename="value" ..../>
+note:
+	props is keyword or reserve word
+		
+
+	function Funname(props)
+	{
+		return(
+			<>
+			..........
+			{props.name}
+			</>
+			)
+	}
+	export default Funname
+
+multi argument passing:
+========================
+Index.js
+==========
+ReactDOM.render(<Gowtham rno='1001' name="vimalan" mark='100'/>,document.getElementById('root'))
+App.js
+======
+function Gowtham(props)
+{
+  return(
+      <>
+        <h1>React components 1. functon: multi arguments or parameters passsing</h1>
+        <h2>Argument passed : {props.rno}</h2>
+        <h2>Argument passed : {props.name}</h2>
+        <h2>Argument passed : {props.mark}</h2>
+      </>
+  )
+}
+export default Gowtham
+json object passing:
+=====================
+index.js
+========
+const mydetails={
+  rno:1001,
+  name:"gowthaman",
+  mark1:100,
+  mark2:99,
+  mark3:98
+}
+
+ReactDOM.render(<Gowtham myobj={mydetails}/>,document.getElementById('root'))
+
+App.js
+======
+function Gowtham(props)
+{
+  return(
+      <>
+        <h1>React components 1. functon: multi arguments or parameters passsing</h1>
+        <h2>Rno   : {props.myobj.rno}</h2>
+        <h2>Name  : {props.myobj.name}</h2>
+        <h2>Mark1 : {props.myobj.mark1}</h2>
+        <h2>Mark2 : {props.myobj.mark2}</h2>
+        <h2>Mark3 : {props.myobj.mark3}</h2>
+      </>
+  )
+}
+export default Gowtham
+
+==================
+object inside array:
+=====================
+const mydetails={
+  rno:1001,
+  name:"gowthaman",
+  marks:[99,97,100,77,89]
+}
+
+ReactDOM.render(<Gowtham myobj={mydetails}/>,document.getElementById('root'))
+
+function Gowtham(props)
+{
+var arr=props.myobj.marks
+
+  return(
+      <>
+        <h1>React components 1. functon: object with array as arguments or parameters</h1>
+        <h2>Rno   : {props.myobj.rno}</h2>
+        <h2>Name  : {props.myobj.name}</h2>
+        <ol>{arr.map((item)=><li>{item}</li>)}</ol>
+        </>
+  )
+}
+export default Gowtham
+array inside objects
+======================
+const ob1={
+		rno:1001,
+		sname:'dharani',
+		mark:99	
+	}
+const ob2={
+		rno:1002,
+		sname:'rani',
+		mark:19	
+	}
+const ob3={
+		rno:1003,
+		sname:'harini',
+		mark:79	
+	}
+
+const arr=[ob1,ob2,ob3]	

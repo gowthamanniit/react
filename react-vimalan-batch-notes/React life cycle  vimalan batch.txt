@@ -1,0 +1,116 @@
+Lifecycle of Components(only class components)
+===============================================
+Each component in React has a lifecycle which you can monitor and manipulate during its three main phases.
+The three phases are: 
+1)Mounting	: meaning --> insert
+	3 types:
+		1) constructor (optional-call before render)
+		2) render      (must - always running) 	
+		3) componentDidMount (optional-call after render)
+2)Updating	: meaning --> change
+		1) constructor
+		2) render
+		3) componentDidUpdate
+		4) shouldComponentUpdate
+		5) getSanpShotBeforeUpdate
+3)Unmounting.	: meaning --> delete component
+		1)componentWillUnMount
+
+
+common code: 1.mount 2.updating
+==================
+import React from "react";
+class Gowtham extends React.Component
+{
+  constructor()
+  {
+    super()
+    this.state={
+      call1:"very first"
+    }
+  }
+  shouldComponentUpdate()
+  {
+    return true;
+  }
+ componentDidUpdate()
+ {
+  document.getElementById("res1").innerHTML=this.state.call1
+ }
+ componentDidMount()
+ {
+  setTimeout(()=>{this.setState({call1:"updating demo"})},5000)
+ }
+ getSnapshotBeforeUpdate(prevProps,prevState)
+ {
+    document.getElementById("res2").innerHTML=prevState.call1
+ }
+  
+  render()
+  {
+   
+    return(
+      <>
+        <h1>React Life cycle - Mounting - insert</h1>
+        <h1>constructor : {this.state.call1}</h1>
+        <h1>render: Second call + always running 24 x 7</h1>  
+        after:<span id="res1"></span>
+        <br></br>
+        Previous:<span id="res2"></span>
+      </>
+    )
+  }
+}
+export default Gowtham
+
+3)unmount: remove component
+===========================
+import React from "react";
+class Child extends React.Component
+{
+  componentWillUnmount()
+  {
+    document.getElementById("res").innerHTML="Component Removed"
+  }
+  render()
+  {
+    return(
+      <>
+    <h1>This is child components</h1>
+    <h1>This is child components</h1>
+    <h1>This is child components</h1>
+
+      </>
+    )
+  }
+}
+class Gowtham extends Child
+{
+  constructor()
+  {
+    super()
+    this.state={
+      show:true
+    }
+  }
+  rcomp=()=>{
+    this.setState({show:false})
+  }
+  render()
+  {
+    let mycomp
+    if(this.state.show===true)
+    {
+      mycomp=<Child/>
+    }
+    return(
+      <>
+      <h1>3.Unmount - componentWillUnmount</h1>  
+      {mycomp}
+      <button onClick={this.rcomp}>remove child component</button>
+      <div id="res"></div>
+      </>
+    )
+  }
+}
+export default Gowtham

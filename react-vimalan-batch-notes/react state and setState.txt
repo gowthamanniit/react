@@ -1,0 +1,57 @@
+react state:
+============
+def: To store json objects
+state: inbuilt object
+ex:
+	constructor()
+	{
+	super()
+	this.state= {....}
+	}
+print:ex
+	{this.state.rno}
+important note:
+ state inbuilt object only we can use class components.
+in function componets we will acheive hooks
+useState concepts.
+ex:
+const[state,setState]=useState(default value)
+===========================
+react setState(only we can use class components)
+===============
+note:setState: S caps
+use:
+	To change state values
+syntax:
+=======
+	setState({key:value,key:value,...})
+
+ex:
+	render()
+	{
+	const fun=()=>{
+		this.setState({mark:10,name:"rani"})
+	}		
+
+	return(
+		<button onClick={fun}>....</button>
+	)
+	}
+props+state combine:
+====================
+App.js
+=======
+syntax:
+constructor(props)
+  {
+    super(props)
+    this.state=this.props.myobj
+  }  
+index.js
+=========
+var details={
+  rno:1001,
+  sname:"dharani",
+  mark:100
+}
+ReactDOM.render(<Gowtham myobj={details}/>,document.getElementById('root'))

@@ -1,0 +1,45 @@
+react events using event.target parameters
+===========================================
+
+types:
+======
+	event.target.id
+	event.target.class
+	event.target.value
+	event.target.src
+	...........
+
+function Gowtham()
+{
+  var disin=(k1)=>{
+    document.getElementById(k1).style.backgroundColor="rgb(222,111,23)"
+   
+  }
+  var disout=(k1)=>{
+
+    document.getElementById(k1).style.backgroundColor="rgb(255,255,255)"
+  }
+  
+  /*
+  var dis=()=>{
+    var n1=parseInt(document.getElementById("t1").value)
+    var n2=parseInt(document.getElementById("t2").value)
+    var n3=n1+n2
+    document.getElementById("tot").innerHTML="Total="+n3
+  }
+  */
+  return(
+    <div>
+        <input type="text" id="t1" placeholder="Enter no.1" onBlur={(event)=>disout(event.target.id)} onFocus={(event)=>disin(event.target.id)}></input><br></br>
+        <input type="text" id="t2" placeholder="Enter no.2" onBlur={(event)=>disout(event.target.id)} onFocus={(event)=>disin(event.target.id)}></input><br></br>
+        <input type="text" id="t3" placeholder="Enter no.3" onBlur={(event)=>disout(event.target.id)} onFocus={(event)=>disin(event.target.id)}></input><br></br>
+        <input type="text" id="t4" placeholder="Enter no.4" onBlur={(event)=>disout(event.target.id)} onFocus={(event)=>disin(event.target.id)}></input><br></br>
+        <input type="text" id="t5" placeholder="Enter no.5" onBlur={(event)=>disout(event.target.id)} onFocus={(event)=>disin(event.target.id)}></input><br></br>
+
+        {/* <input type="button" value="clickme" onClick={dis}></input> */}
+        <div id="tot"></div>
+    </div>
+  )
+}
+export default Gowtham
+

@@ -1,0 +1,129 @@
+react hook form:
+=================
+pre request:
+	*) only works on function components
+	*) don't use setState (value change),thats why we can use hook.
+	*) setState only we can use on class components
+	*) return always running 
+	*) suppose value attribute added in input tag, then we can't change values
+	so use hook.
+	
+	ex:
+	<input type="text" id="t1" value=".."></input>
+
+	don't change anything in textbox because return always running 
+
+	solution:
+	=========
+	- strong knowledge in events
+	- events target , id  & value 
+	- parameter or argument passing
+	- react life cycle  mount & updating
+	- setState syntax 
+
+====================================hook intro==================
+What are Hooks
+React hooks are like Anchor 
+
+rules:
+Only work with function based components, not with class based components.
+Both arrow and regular function component works
+Cannot nest hooks inside loops, conditions or nested functions
+
+useState()
+def:useState hook provides you with functionality to set state for a variable and automatically update the DOM with the new state
+=================================================intro end===========
+hook type:1 useState
+====================
+header file:
+============
+import { useState } from 'react'
+
+declaration of useState:
+========================
+syntax:
+	const[var1,var2]=useState("default value")
+ex:
+	const[name,setName]=useState("vimalan")
+
+print: name ----> vimalan
+ex:
+<h1>user name {name}</h1>
+
+setName is used to change default (vimalan) value
+
+example:final
+=============
+import { useState } from "react"
+function Gowtham()
+{
+  const[name,setName]=useState("gowtham")
+  const funname=(k)=>{
+    setName(k)
+  }
+  return(
+    <form>
+        <h1>React Hook Form</h1>
+        <input type="text" id="t1" value={name} onChange={(event)=>funname(event.target.value)}></input>
+    </form>
+  )
+}
+export default Gowtham
+
+type 2: (15-8-23)
+=================
+	useEffect hook:
+	===============
+	def: very first call + it will call automatiically when changes in useState
+
+	note:
+		don't use set.... inside useEffect like componentDidUpdate		
+header file:
+============
+	import { useEffect } from 'react'
+
+no declaration:
+===============
+
+functionname:
+==============
+	useEffect(()=>{
+	
+	.........write code
+
+	})
+
+use or purpose:
+===============
+
+step 1: veryfirst call       like constructor(only class) 
+step 2: retrun ----->always running
+step 3: any changes -->step 1
+
+interview question:
+===================
+where to use useEffect hook ?
+
+	API Handling
+
+ex full code:
+=================
+import { useState,useEffect } from "react";
+function Gowtham()
+{
+  const[city,setCity]=useState("karur")
+  useEffect(()=>{
+    document.title=`Default City:${city}`
+  })
+  const myfun=()=>{
+    setCity("namakkal")
+  }
+  return(
+    <>    
+      <h1>UseEffect Hook Demo</h1>
+      <h2>Default:City:{city}</h2>
+      <button onClick={myfun}>Change City</button>
+    </>
+  )
+}
+export default Gowtham
