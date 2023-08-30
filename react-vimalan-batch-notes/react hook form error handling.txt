@@ -1,0 +1,39 @@
+Error Handling in react-hook-form:
+==================================
+
+import header:
+	import { useForm } from 'react-hook-form'
+
+declaration:
+	const { register,handleSubmit, formState:{ errors }}=useForm()
+
+error handling ?
+	
+	ex:
+	*) textbox should not empty
+	*) min length validation
+	*) max length validation
+	*) only number or text or special char....
+
+final code:
+===========
+import { useForm } from "react-hook-form";
+function Gowtham()
+{
+  const { register,handleSubmit,formState:{ errors }}=useForm()
+  const dis=(data)=>
+  {
+    console.log(data)
+  }
+  return(
+    <form onSubmit={handleSubmit(dis)}>
+        <center><h2>React Hook Form Error Handling</h2></center>
+        <input type="text" name="un" placeholder="Enter User Name" {...register("un",{required:true})}></input>
+        {errors.un && errors.un.type==="required" && <><font color='red'>* must fill</font></>}
+        <br></br>
+        <input type="submit" value="test"></input>
+        
+    </form>
+  )
+}
+export default Gowtham

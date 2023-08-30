@@ -1,0 +1,52 @@
+html:
+=======
+<head>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<i class="fa-solid fa-location-dot"></i>
+</body>
+
+
+react:
+=======
+installation:
+
+	> npm i --save @fortawesome/fontawesome-svg-core
+	> npm i --save @fortawesome/free-solid-svg-icons
+	> npm i --save @fortawesome/react-fontawesome
+	
+<FontAwesomeIcon icon={faGear} />
+
+example full code basic:
+=======================
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGear,faHouse } from "@fortawesome/free-solid-svg-icons"
+function Gowtham()
+{
+  return(
+      <>
+        <h1>React 3rd party libraries - Font Awesome</h1>
+        <FontAwesomeIcon icon={faGear} />
+        <FontAwesomeIcon icon={faHouse} />
+      </>
+  )
+}
+export default Gowtham
+example full code advanced with inline css:
+===========================================
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGear,faHouse } from "@fortawesome/free-solid-svg-icons"
+function Gowtham()
+{
+  return(
+      <>
+        <h1>React 3rd party libraries - Font Awesome</h1>
+        <FontAwesomeIcon icon={faGear} spin/>
+        <font style={{color:"red"}}>Location</font>
+        <FontAwesomeIcon icon={faHouse}  style={{backgroundColor:"green",color:"white"}} />
+        <font style={{color:"red"}}>Home</font>
+      </>
+  )
+}
+export default Gowtham

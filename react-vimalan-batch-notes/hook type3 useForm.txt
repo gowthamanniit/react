@@ -1,0 +1,69 @@
+React Hook:
+===========
+3) useForm
+
+use: or purpose:
+	
+	To store all form input values in json formats.
+
+installation:
+
+	d:/projectname/appname>npm install react-hook-form
+
+import header file:
+	import { useForm } from 'react-hook-form'
+
+declaration:
+
+	const { register, handleSubmit } =useForm()
+
+register use: to store form input values
+
+ex:
+	<input type="text" name="t1" {...register("t1")}></input>
+
+handleSubmit use: handling submit button and view values
+
+ex:
+	<form onSubmit={handleSubmit(arrowfun)}>
+
+	<input type="submit">
+	</form>
+
+
+final code:
+===========
+import { useForm } from "react-hook-form"
+function Gowtham()
+{
+  const { register,handleSubmit } =useForm()
+  const show=(data)=>{
+          console.log("---->",data)
+          var finres=""
+          for(var k in data)
+          {
+          //console.log("key-->",k,"value-->",data[k])
+          finres=finres+"<br>"+k+"--->    "+data[k]
+          }
+  document.getElementById("res1").innerHTML=finres;
+  /*
+    document.getElementById("res1").innerHTML="User Name:"+data.un;
+    document.getElementById("res2").innerHTML="Password :"+data.pw;
+    document.getElementById("res3").innerHTML="City     :"+data.city;
+    */
+  }
+  return(
+      <form onSubmit={handleSubmit(show)}>
+          <h1>React Hook - useForm </h1>
+          <input type="text" name="un" placeholder="enter user name" {...register("un")}></input><br></br>
+          <input type="text" name="place" placeholder="enter native place" {...register("place")}></input><br></br>
+          <input type="password" name="pw" placeholder="enter password name" {...register("pw")}></input><br></br>
+          <input type="city" name="city" placeholder="enter city" {...register("city")}></input><br></br>
+          <input type="submit" value="show values"></input>     
+          <div id="res1"></div>          
+      </form>
+        )
+}
+export default Gowtham
+
+	

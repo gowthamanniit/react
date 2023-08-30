@@ -1,0 +1,48 @@
+import axios from "axios";
+import { useState,useEffect } from "react";
+function Gowtham()
+{
+  const[info,setInfo]=useState(null)
+  const[city,setCity]=useState(null)
+  
+    useEffect(()=>{
+      if (city!==null)
+      {
+    const myapi=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=3fd756d3c6233eecf8a57b9da9ce4d07`  
+    axios.get(myapi).then((res)=>{
+      setInfo(res.data)
+    })
+     }
+  })
+  
+  const changecity=()=>{
+    var cn=document.getElementById("cn").value;
+    setCity(cn)
+  }
+  //if(info===null)
+  //return
+  
+  return(
+    <>
+      <h1>Axios Http Header Demo</h1>
+      <input type="text" id="cn" placeholder="Enter City Here"></input>
+      <input type="button" onClick={changecity} value="Weather Report"></input>
+      {info!==null && <>
+      {/* <h1>Result Status cod:{info.cod}</h1> */}
+      {/* {info.cod==="404" &&  <h1>Report:{info.message}</h1>}       */}
+      {info.cod===429 && <h1>Temporary blocked limitation exceed</h1>} 
+      {
+      info.cod===200 && <>
+      <h1>City name:{info.name}</h1>
+      <h1>Weather Report Main:{info.weather[0].main}</h1>
+      <h1>Weather Report Description:{info.weather[0].description}</h1>
+      <h1>Temperature:{info.main.temp}</h1>
+      </>      
+      }
+      
+      </>
+  }      
+    </> 
+  )
+}
+export default Gowtham
