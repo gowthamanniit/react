@@ -1,0 +1,22 @@
+npm update?
+============
+npm install -g npm@10.1.0
+npm version check?
+===================
+npm --v
+node version check?
+===================
+node -v
+node update?
+============
+uninstall node js (start--> type uninstall node js)
+
+google : download node js(30.3 mb)
+install : remove tick : automattically nessary files
+===========================
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+how to use post method in node js?
+
+use:
+	security purpose
+	
+	ex:
+	http://127.0.0.1:port/funname
+
+	meaning: only showing base URL(no ? &)
+
+installation:
+	npm install body-parser
+
+module import
+
+	var bodyparser=require("body-parser")
+
+	var urlencode=bodyparser.urlencoded({extended:false})
+
+	var app=require("express")()
+	app.post("/funname",urlencode,(req,res)=>{
+
+	var data1 =req.body.htmlname
+	.........	
+	res.end("\n...............")
+
+	}).listen(port number)
+
+html file:
+
+	<form action="http://127.0.0.1:port/funname" method="post">
+
+		........	
+
+	</form>
+
+run: only html file

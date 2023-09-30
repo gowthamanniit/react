@@ -1,0 +1,59 @@
+express module: (inbuilt node js modules)
+===============
+
+use:
+	backend dynamic/runtime envirionment
+
+dynamic/runtime ?
+
+	data get from user
+	from output screen
+
+ex:
+	http://localhost:portnumber/functionname?var=value
+
+here value is runtime
+
+note:(runtime)
+	don't edit code
+
+installation:
+	npm install express
+	
+	check your node_modules folder
+	
+module import:
+	var exp=require("express")
+	var app=exp()
+	or
+	var app=require("express")()
+
+how to use?
+
+	app.get("/userfunctionname",(req,res)=>{
+
+	var uservar=req.query["runtime variablename"]
+	.......
+	res.end(.....)
+	}.listen(portnumber 0 to 65535)
+
+	console.log("port listening .....")
+
+terminal:
+	node filename.js
+
+open browser:
+
+	http://127.0.0.1:port/functionname
+argument passing:
+	http://127.0.0.1:port/functionname?var1=value1&var2=value2
+
+
+note:
+	req-----------> get data from user
+	res.end("")--->browser print (joining operater +)
+	console.log("")--->terminal print(joining , )
+
+
+
+	
