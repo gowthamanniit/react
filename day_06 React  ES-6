@@ -25,63 +25,24 @@ A class is a type of function, but instead of using the keyword function to init
 we use the keyword class, and the properties are assigned inside a constructor() method.
 
 Example
-A simple class constructor:
-
-class Car {
-  constructor(name) {
-    this.brand = name;
+// Arrow function with Arg passing:
+import React from 'react'
+class App extends React.Component
+{
+  render()
+  {
+    const show=(v1,v2)=>{
+      alert(v1+v2)
+    }
+    return(
+        <>
+        <h1>Arrow Function with arguments or parameter</h1>
+          <button onClick={()=>show(11,22)}>Click me</button>
+        </>
+    )
   }
 }
-
-example 
-create object
-mycar = new Car("Ford");
-
-Note: The constructor function is called automatically when the object is initialized.
-
-method in class
-===============
-class Car {
-  constructor(name) {
-    this.brand = name;
-  }
-  
-  present() {
-    return 'I have a ' + this.brand;
-  }
-}
-
-mycar = new Car("Ford");
-mycar.present();
-
-Class Inheritance
-=================
-To create a class inheritance, use the extends keyword.
-
-Example
-Create a class named "Model" which will inherit the methods from the "Car" class:
-
-class Car {
-  constructor(name) {
-    this.brand = name;
-  }
-
-  present() {
-    return 'I have a ' + this.brand;
-  }
-}
-
-class Model extends Car {
-  constructor(name, mod) {
-    super(name);
-    this.model = mod;
-  }  
-  show() {
-      return this.present() + ', it is a ' + this.model
-  }
-}
-mycar = new Model("Ford", "Mustang");
-mycar.show();
+export default App
 
 ====----===
 The super() method refers to the parent class.
