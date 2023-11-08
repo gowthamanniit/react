@@ -15,11 +15,11 @@ open visual studio code --> terminal --> new terminal
 	npm ---> node package manager
 	-g     ---> global
 
-	>>> npx create-react-app projectname
+	>>> npx create-react-app Appnamefolder
 	      (this command we will give every new project)
 	
 	npx --> node package executor
-	projectname --> userdefine
+	Appnamefolder --> userdefine
 	file --> open folder --> select your project folder -->
 			(ex: c:/users/livewire/myproject)
 		--> select folder
