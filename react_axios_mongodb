@@ -89,3 +89,7 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+
+for more info:
+https://maishamalihaa.medium.com/get-data-from-mongodb-through-nodejs-in-reactjs-using-axios-b27930c35660
