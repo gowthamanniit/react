@@ -1,0 +1,91 @@
+// ******* backend/database.js *******
+
+const { MongoClient } = require("mongodb");
+const uri = "mongodb://0.0.0.0:27017";
+
+const client = new MongoClient(uri);
+client.connect();
+
+async function shoes() {
+    try {
+        const dataset = await client.db('Ecommerce').collection('shoes').find().toArray();
+        return JSON.stringify(dataset);
+    }
+    catch {
+        console.log("db closed");
+        await client.close();
+    }
+}
+module.exports = {shoes};
+===========================================
+// ******* backend/server.js *******
+
+const http = require('http');
+const database = require('./database');
+
+http.createServer(async (req,res)=> {
+    // THIS IS FOR CORS ERRORS
+    res.setHeader('Access-Control-Allow-Origin', '*'); /* @dev First, read about security */
+    res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
+    res.setHeader('Access-Control-Max-Age', 2592000); // 30 days
+    if(req.url == '/api/shoes'){
+        try {
+            res.writeHead(200, {'Content-Type':'application/json'});
+            const dataset = await database.shoes(); // here we get the string json
+            res.write(dataset); // whoever requests will get the string json as response
+        }
+        finally {
+            res.end(); // must end response. DONT FOGET
+        }
+    }
+}).listen(4000);
+// the server will listen to all request in port 400 because
+// reactjs is run on port 3000. react will request for data from port
+// 3000 to our nodejs in port 4000
+===========================================
+// ******* reactfrontend/src/App.js *****
+
+import React, { useEffect } from "react";
+import Axios from 'axios';
+
+export default function App() {
+    // will update list as database updates on refreshing the site
+    const [list, setList] = React.useState([]);
+
+    // will be run once 
+    useEffect(()=> {  
+        // here we get the data by requesting data from this link
+        // to our nodejs server
+        Axios.get('http://localhost:4000/api/shoes')
+        .then((res)=> setList(res.data));
+    }, []);
+
+    // creating list of shoes
+    let val = list.map((item)=>{
+        return <li key={item.id}>{item.name}</li>
+    });
+    
+    return (
+        <div>
+            <h1>hello world</h1>
+            <p>i live in this world</p>
+            <ol>
+                {val}
+            </ol>
+        </div>
+    )
+}
+=========================================
+// ******* reactfrontend/src/index.js *******
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
