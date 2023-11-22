@@ -9,11 +9,14 @@ JSX makes it easier to write and add HTML in React.
 
 Coding JSX
 ===========
-JSX allows us to write HTML elements in JavaScript and place them in the DOM without any createElement()  and/or appendChild() methods.
+JSX allows us to write HTML elements in JavaScript 
+and place them in the DOM without any createElement()  
+and/or appendChild() methods.
 
 JSX converts HTML tags into react elements.
 
-You are not required to use JSX, but JSX makes it easier to write React applications.
+You are not required to use JSX, 
+but JSX makes it easier to write React applications.
 
 Here are two examples. The first uses JSX and the second does not:
 ====================================using jsx================================
@@ -111,7 +114,8 @@ ReactDOM.render(myelement, document.getElementById('root'));
 React supports if statements, but not inside JSX.
 
 To be able to use conditional statements in JSX, 
-you should put the if statements outside of the JSX, or you could use a ternary expression instead:
+you should put the if statements outside of the JSX, 
+or you could use a ternary expression instead:
 Option 1:
 Write if statements outside of the JSX code:
 
@@ -140,7 +144,8 @@ const myelement = <h1>{(x) < 10 ? "Hello" : "Goodbye"}</h1>;
 
 ReactDOM.render(myelement, document.getElementById('root'));
 =====================================================================================
-Note that in order to embed a JavaScript expression inside JSX, the JavaScript must be wrapped with curly braces, {}.
+Note that in order to embed a JavaScript expression inside JSX,
+the JavaScript must be wrapped with curly braces, {}.
 
 
 
