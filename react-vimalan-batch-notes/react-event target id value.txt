@@ -42,4 +42,36 @@ function Gowtham()
   )
 }
 export default Gowtham
+=============================advanced==================
+function Gowtham()
+{
+  const show=(event)=>{
+    
+    document.getElementById("s"+(event.target.id).charAt(1)).innerHTML=event.target.value
 
+    /*
+    if(event.target.id==="t1")
+    document.getElementById("s1").innerHTML=event.target.value
+    if(event.target.id==="t2")
+    document.getElementById("s2").innerHTML=event.target.value
+    if(event.target.id==="t3")
+    document.getElementById("s3").innerHTML=event.target.value
+    if(event.target.id==="t4")
+    document.getElementById("s4").innerHTML=event.target.value
+    if(event.target.id==="t5")
+    document.getElementById("s5").innerHTML=event.target.value
+  */
+  }
+
+    return(
+      <>
+        <input type="text" onChange={(e)=>show(e)} id="t1"></input><span id="s1"></span><br></br>
+        <input type="text" onChange={(e)=>show(e)} id="t2"></input><span id="s2"></span><br></br>
+        <input type="text" onChange={(e)=>show(e)} id="t3"></input><span id="s3"></span><br></br>
+        <input type="text" onChange={(e)=>show(e)} id="t4"></input><span id="s4"></span><br></br>
+        <input type="text" onChange={(e)=>show(e)} id="t5"></input><span id="s5"></span><br></br>
+               
+      </>
+    )
+}
+export default Gowtham
