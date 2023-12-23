@@ -16,7 +16,10 @@ click useraccount(top right)
 copy api key: 3fd756d3c6233eecf8a57b9da9ce4d07
 
 note:
-If you register an new API key with OpenWeatherMap, it will be activated automatically, this typically takes between 10 minutes and 2 hours after your successful registration.
+If you register an new API key with OpenWeatherMap, 
+it will be activated automatically, 
+this typically takes between 10 minutes and 2 hours 
+after your successful registration.
 
 
 click API menu -->scroll down(second page) -->  currect weather data
