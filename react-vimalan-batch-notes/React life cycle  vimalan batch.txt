@@ -1,6 +1,7 @@
 Lifecycle of Components(only class components)
 ===============================================
-Each component in React has a lifecycle which you can monitor and manipulate during its three main phases.
+Each component in React has a lifecycle which you can monitor and manipulate 
+during its three main phases.
 The three phases are: 
 1)Mounting	: meaning --> insert
 	3 types:
