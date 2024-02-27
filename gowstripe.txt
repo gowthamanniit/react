@@ -1,0 +1,26 @@
+www.stripe.com
+email:gowstripe@gmail.com
+pwd:Gowthaman@12345(10 digits)
+    same as email
+
+pk_test_51O3DgVGAyZP9OmXMb1udKzEgAqkeraqzTNGmvY61Tf0njCyiV9htA10fR4uXwDUQwYA9JQ9boouvgVsEDkEewtwT002fwg1dWp
+
+sk_test_51O3DgVGAyZP9OmXMb9rrPe5AsFGEqku3WLfIzAKMT4muB1xxCSM0KTXNTf3nOwtqvM43ZvWfN3gRZSmyHM2doNnk00F659IXcI
+
+
+stepes:
+========
+1)open www.stripe.com
+2)create account form sign in
+3)activate email
+4)create new business (new account)top left corner
+5)customer optionn -->add test customer
+	--> test customer click-->actions-->
+		open customer portal
+	-->card number: 4242424242..
+	--> expiry: 10/25  
+	-->  123
+	-->zip: 12345
+	--country> us
+	--> submit
+6)2 days wait

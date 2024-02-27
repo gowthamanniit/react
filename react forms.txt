@@ -1,0 +1,31 @@
+React Forms:
+===========
+	
+	def:
+		to get value from runtime or dynamic.
+
+
+1) text,number,password,label,radio,checkbox,textarea,select option,email,date,time,week,file,range,hidden,button,submit,reset.
+
+
+submit --------> it will call form action ="url"
+		don't use onclick event
+		page refresh automattically + clear form data
+		event.preventDefault()--> restrict refresh		
+
+input type=button --> don't call form action
+		only calls on user defined function
+		use onlick
+		page not refresh + not clear form data
+
+reset -->clear all form values
+		
+
+<button>------------> add--> image, bold, marquee, font color size
+
+			remaining all same in submit
+		page refresh automattically + clear form data
+		event.preventDefault()--> restrict refresh
+
+
+	

@@ -1,0 +1,39 @@
+React props:
+===============
+Props are arguments passed into React components.
+
+Props are passed to components via HTML attributes.
+
+props stands for properties.
+
+Note: React Props are read-only! You will get an error 
+if you try to change their value.
+
+index.js
+=========
+import Gowtham from './App';
+import ReactDOM from 'react-dom';
+
+var rno=1001
+var cend="15-Dec-2023"
+
+ReactDOM.render(<Gowtham srno={rno} sname="nikil" enddate={cend} enddate1="31-Jan-2024"/>,document.getElementById("root"))
+
+app.js
+======
+function Gowtham(props)
+{
+  return(
+    <>
+    <center>
+      
+    <h1>Student Roll Number:{props.srno}</h1>
+    <h1>Student Name       :{props.sname}</h1>
+     <h1>Course End Date    :{props.enddate} condition: if daily 2 hrs</h1>
+    <h1>Course End Date    :{props.enddate1} condition: if daily 1 hrs</h1>
+
+    </center>
+    </>
+  )
+}
+export default Gowtham
