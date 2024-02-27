@@ -1,0 +1,83 @@
+React Hook:(only work on function components not class componet)
+=========
+
+1) useState()
+
+def:useState hook provides you with functionality 
+to set state for a variable and 
+automatically update the DOM with the new state
+
+header file:
+============
+
+import { useState } from 'react'
+
+
+declaration:
+=============
+syntax:
+
+const [ var1, var2 ] = useState(default value)
+
+ex:
+const [name,setName]=useState("")
+const [mark,setMark]=useState(0)
+const [stud,setStud]=useState(null)
+const [subs,setSubs]=useState([])
+const [list,setList]=useState({})
+
+change/update value:
+===================
+syntax:	
+setName(newname) --> new name updated instead of ""
+		 --> return will call automattically
+
+purpose:
+	automatiically update DOM when change the state.
+
+	DOM: return(...
+
+		....
+		)
+
+example:basic
+================
+import {useState} from 'react'
+function Gowtham()
+{
+  const[name,setName]=useState("--------------")
+
+  const dis=()=>{
+    setName("abimanyu")
+  }
+
+  return(
+    <>
+      <button onClick={dis}>click me</button>
+      <h1>Hook useState default value:{name}</h1>
+    </>
+  )
+}
+export default Gowtham
+
+example: advanced:
+==================
+
+import {useState} from 'react'
+function Gowtham()
+{
+  const[name,setName]=useState("--------------")
+
+  const dis=(event)=>{
+    setName(event.target.value)
+  }
+
+  return(
+    <>
+      <input type='text' onChange={(e)=>dis(e)} value={name}></input>
+      <h1>Hook useState :{name}</h1>
+    </>
+  )
+}
+export default Gowtham
+
