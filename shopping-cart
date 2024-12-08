@@ -147,6 +147,7 @@ return(
 	}}
 	</table>
 <h1>Total price : {cartTotal} </h1>
+Empty cart:<button onClick={emptyCart()}>empty cart</button>
 </>
 
 )
