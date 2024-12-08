@@ -1,0 +1,159 @@
+shopping cart:
+==============
+
+step 1: npx create-react-app add-to-cart
+step 2: npm install react-use-cart
+step 3: npm install bootstrap@next
+
+import bootstrap:
+import '../node_modules/bootstrap/dis/css/bootstrap.min.css';
+App.js
+======
+
+
+Home.js
+========
+return()
+{
+<ItemCard img="" title="title" desc="desc" />
+}
+ItemCard.js
+===========
+function ItemCard(props)
+{
+return(
+<>
+<img src={props.img} />
+{props.title}
+{props.desc}
+{props.price}
+<button>add to cart</button>
+<>
+)
+}
+note: goto bootstrap website copy cart design.
+
+data.js
+========
+import img1 from './images/..jpg'
+....
+const data={
+	productData:[
+		{
+			id:1
+			img:img1,
+			title:'mango',
+			desc:'',
+			price:45
+		},
+		{},
+		{}
+	]	
+}
+export default data
+
+Home.js
+========
+
+import data from './data'
+function Home()
+{
+console.warn(data.productData)//test with console
+
+return(
+<>
+{
+ data.productData.map((item,index)=>{
+  return(
+	<ItemCard img={item.img} title={item.title} desc={item.desc} price={item.price} item={item} key={index} />
+	)
+}
+
+
+</>
+)
+}
+
+Cart.js
+========
+
+
+
+ItemCard.js
+=============
+import {useCart} from 'react-use-cart'
+function ItemCart()
+{
+const {addItem} = useCart()
+return(
+
+<button onclick={addItem(props.item)}>Add to Cart</button>
+)
+}
+
+App.js
+===========
+
+import Home from ..
+import Cart from ...
+import {CartProvider} from 'react-use-cart'
+
+function App()
+{
+
+return(
+	<>
+	<CartProvider>
+	<Home />
+	<Cart />
+	</CartProvider>
+	</>
+)
+}
+
+Cart.js
+========
+import {useCart} from 'react-use-cart'
+
+function Cart()
+{
+const{  IsEmpty,
+	totalUniqueItems,
+	items,
+	totalItems,
+	cartTotal,	
+	updateItemQuantity,
+	removeItem,
+	emptyCart,	
+}=useCart()
+if (IsEmpty) return <h1>Cart is Empty </h1>
+return(
+<>
+	<h3>Cart{totaluniqueItems} Total Items: {totalItems}</h3>
+	<table>	
+	{items.map((item,index)=>{
+		return(
+		<tr key={index}>
+			<td><img src={item.img}></td>
+			<td>{item.title}</td>
+			<td>{item.price}</td>
+			<td>{item.Quantity}</td>
+			<td><button onClick={()=>updateItemQuantity(item.id,item.quantity-1)}>-</button>
+			    <button>+</button>
+			    <button onClick={()=>removeItem(item.id)}>remove item</button>
+			</td>
+		</tr>
+		)
+	}}
+	</table>
+<h1>Total price : {cartTotal} </h1>
+</>
+
+)
+}
+
+for more details refer:
+https://youtu.be/B0E2esA5nQo
+
+
+
