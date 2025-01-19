@@ -56,3 +56,29 @@ useEffect(()=>{
   )
 }
 export default Gowtham
+
+ex:3 best
+============
+
+import { useState,useEffect } from "react"
+function App()
+{
+  const[count,setCount]=useState(0)
+
+  useEffect(()=>{
+    setTimeout(()=>{document.title="gowthaman"+count},4000)
+  })
+
+  const dis=()=>{
+    document.title="manoj"
+     setCount(count+1)  //automattically called useeffect and return dom
+  }
+
+  return(
+    <>
+    <button onClick={dis}>click me</button>
+    <h1>Count:{count}</h1>  
+    </>
+  )
+}
+export default App
