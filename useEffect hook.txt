@@ -11,15 +11,16 @@ syntax:
 
 function functionname()
 {
-	useEffect(()=>{
-	...............auto call when change the values in return
+
+	useEffect(()=>{//auto called when change the state
+	...............
 	})
 	return(
 	
 	)
 }
 export default functionname
-
+note: don't use setstate inside the useeffect, because auto call again in useeffect.
 ex:1
 import { useState,useEffect } from 'react'
 function Gowtham()
