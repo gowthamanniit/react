@@ -1,8 +1,8 @@
 useEffect Hook:
 ============
 use: 
-*)automattically called very first time
-*)automattically called when chagnges using event(onChange,onClick,onSubmit,..) in return 
+*)automattically called very first time useEffect
+*)automattically called useEffect & dom update when chagnges the state 
 
 header file:
 import { useEffect } from 'react'
