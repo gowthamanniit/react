@@ -29,8 +29,8 @@ console.log(d)
 }
 .............
 <form onSubmit={handleSubmit(myfun)}>
-<input type="text" name="t1" {...register("t1")}></input>
-<input type="email" name="e1" {...register("e1")}></input>
+<input type="text" {...register("t1")}></input>
+<input type="email" {...register("e1")}></input>
 <input type="submit"></input>
 </form>
 ===========================================
@@ -55,9 +55,9 @@ document.getElementById("res1").innerHTML="User Name:"+data.un
   return(
     <form onSubmit={handleSubmit(myfun)}>
     <h1>Welcome To React hook (useForm)</h1>
-    <input type="text" name="un" {...register("un")}></input>
-    <input type="password" name="pw" {...register("pw")}></input>
-    <input type="email" name="e" {...register("e")}></input>
+    <input type="text"  {...register("un")}></input>
+    <input type="password"  {...register("pw")}></input>
+    <input type="email"  {...register("e")}></input>
     <input type="submit"></input>
   <div id="res1"></div>
   <div id="res2"></div>
