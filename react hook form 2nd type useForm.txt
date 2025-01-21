@@ -6,7 +6,7 @@ install react hook form:
 
 d:/project/app> npm install react-hook-form
 
-use:  to get form all input values.
+use:  to get form all input values in json.
 
 header file:
 
