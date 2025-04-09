@@ -3,6 +3,11 @@ useEffect Hook:
 use: 
 *)automattically called very first time useEffect
 *)automattically called useEffect & dom update when chagnges the state 
+important note:
+	==> don't use set/update inside useEffect
+	==> suppose if you apply set inside useEffect,the chain will apply auto
+		i.e (infinite ....)
+
 
 header file:
 import { useEffect } from 'react'
