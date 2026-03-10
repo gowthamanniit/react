@@ -1,0 +1,86 @@
+use: easily get req.body
+axios.post( we can send req.body )
+ex:
+{
+  "lon":"22.34",
+  "lat":"100.34"
+}
+============================================
+axios.get ( only we can send --> parameters)
+ex:
+`https://api.weatherbit.io/v2.0/current?lat=${input.lat}&lon=${input.lon}`
+or
+axios.get(baseurl,{params:input}).then().catch()
+=============================================
+import { useState } from 'react'
+  const inp={
+    lon:"",
+    lat:""
+  }
+  const [input,setInput]=useState(inp)
+  const inputHandler=(event)=>{
+    const {name,value}= event.target;
+    setInput({...input,[name]:value})     
+  }
+    const submitForm=(e)=>{
+  e.preventDefault();
+    console.log(input)
+    }
+    retun(
+    <form onSubmit={submitForm}>
+            <input type="text" name="lat" onChange={inputHandler} placeholder='Enter latitude'></input><br></br>
+            <input type="submit" value="Get Weather Report"></input>
+            )
+
+            ===========================full code ============
+            import React from 'react'
+import { useState } from 'react'
+import axios from 'axios'
+
+function App() {
+  
+  const inp={
+    lon:"",
+    lat:""
+  }
+  const [input,setInput]=useState(inp)
+  const [output,setOutput]=useState(null)
+
+  const inputHandler=(event)=>{
+    
+    const {name,value}= event.target;
+    setInput({...input,[name]:value})
+     
+  }
+  const submitForm=(e)=>{
+  e.preventDefault();
+    console.log(input)
+    const apilink=`https://api.weatherbit.io/v2.0/current?lat=${input.lat}&lon=${input.lon}&key=c47b7d415c9d47c7bc74df7a9b88c189&include=minutely`
+    console.log(apilink)
+    axios.get(apilink).then((res)=>{
+      console.log(res.data)
+      setOutput(res.data)
+    }).catch((err)=>{
+      console.log(err.response.data)
+
+    })
+  }
+
+  return (
+    <div>
+        <h1>Weather Report</h1>
+        <form onSubmit={submitForm}>
+            <input type="text" name="lat" onChange={inputHandler} placeholder='Enter latitude'></input><br></br>
+            <input type="text" name="lon" onChange={inputHandler} placeholder='Enter longtitude'></input><br></br>
+            <input type="submit" value="Get Weather Report"></input>
+            <br></br>
+            City Name:{output!==null && output.data[0].city_name}      
+            <br></br>
+            Weather report: {output!==null && output.data[0].weather.description}
+
+        </form>
+    </div>
+  )
+}
+
+export default App
